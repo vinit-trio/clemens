@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clemens</title>
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/alpine.js" defer></script>
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div x-data="{ show: true }" x-init="setTimeout(() =&gt; show = false)" x-show="show"
+        x-transition.opacity.duration.1000ms="" class="fixed inset-0 bg-white z-999999"></div>
+    <!-- loader -->
+
+    <header class="py-13 xl:py-26 h-100 md:h-125 xl:h-150 flex items-center sticky top-0 z-20 bg-white/90"
+        x-data="{ open: false }">
+        <div class="container">
+            <div class="flex items-center justify-between">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="Mike Clemens" class="w-150 md:w-215">
+                </a>
+                <div class="flex items-center gap-30 lg:gap-65">
+                    <div class="hidden md:flex gdnt_red text-white gap-12 xl:gap-24 py-8 px-15">
+                        <img src="assets/images/fire.svg" alt="" class="w-45">
+                        <div class="flex flex-col">
+                            <span class="text-h5 font-bold uppercase">24 Std.-Heizungsnotdienst</span>
+                            <a class="text-base" href="tel:+492761834147">Tel: 0 27 61 / 83 41 47</a>
+                            <a class="text-base" href="tel:+491775625368">Mobil: 01 77 / 5 62 53 68</a>
+                        </div>
+                    </div>
+                    <button @click="open = !open" class="relative size-50 xl:size-80">
+                        <img src="assets/images/menu.svg" alt="" class="absolute inset-0 transition-all duration-300"
+                            :class="open ? 'opacity-0 -rotate-180' : ''">
+                        <img src="assets/images/close.svg" alt="" class="absolute inset-0 transition-all duration-300"
+                            :class="open ? '' : 'opacity-0 rotate-180'">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Panel -->
+        <div x-show="open" x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300"
+            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+            class="fixed inset-0 bg-blue/90 text-white z-20 p-6 top-100 md:top-125 xl:top-150">
+            <div class="h-full overflow-y-auto">
+                <div class="container py-44 lg:py-88">
+                    <nav>
+                        <ul class="primary_menu">
+                            <li>
+                                <a href="index.html" class="active">
+                                    Startseite
+                                </a>
+                            </li>
+                            <li>
+                                <a href="unternehmen.html">
+                                    Unternehmen
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="unternehmen.html#unser-team">Unser Team </a>
+                                    </li>
+                                    <li>
+                                        <a href="unternehmen.html#werte&motivation">Werte & Motivation </a>
+                                    </li>
+                                    <li>
+                                        <a href="unternehmen.html#zertifikate&partner">Zertifikate & Partner</a>
+                                    </li>
+                                    <li>
+                                        <a href="unternehmen.html#karriere">Karriere</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="leistungen.html">
+                                    Leistungen
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="leistungen.html#heizung">Heizung</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#sanitär">Sanitär</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#klima">Klima</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#elektro">Elektro</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="leistungen.html">
+                                    Service
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="leistungen.html#heizung">Heizung</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#sanitär">Sanitär</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#klima">Klima</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#elektro">Elektro</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="index.html">
+                                    Referenzen
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html">
+                                    Kontakt
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html">
+                                    Aktuelles
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- section 1 -->
+        <section class="relative z-1 overflow-hidden min-h-[calc(100dvh-150px)] flex items-end">
+            <div class="bg-blue/80 text-white pl-[calc((100%-1620px)/2)] max-w-7xl my-150">
+                <h1 class="text-h1 font-semibold uppercase p-20">
+                    Komplettlösungen <br>
+                    für Heizung, Sanitär, Klima und Elektro
+                </h1>
+            </div>
+            <div class="absolute inset-0 -z-1">
+                <div class="swiper home_hero_swiper relative h-full">
+                    <div class="swiper-wrapper h-full">
+                        <div class="swiper-slide h-full">
+                            <div class="size-full">
+                                <img src="assets/images/hero-swiper-1.webp" class="size-full object-cover"
+                                    alt="Hero swiper image 1">
+                            </div>
+                        </div>
+                        <div class="swiper-slide h-full">
+                            <div class="size-full">
+                                <img src="assets/images/hero-swiper-2.webp" class="size-full object-cover"
+                                    alt="Hero swiper image 2">
+                            </div>
+                        </div>
+                        <div class="swiper-slide h-full">
+                            <div class="size-full">
+                                <img src="assets/images/hero-swiper-3.webp" class="size-full object-cover"
+                                    alt="Hero swiper image 3">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination absolute"></div>
+                </div>
+            </div>
+        </section>
+        <!-- section 2 -->
+        <section>
+            <div class="container lg:pr-[calc((100%-1620px)/2)] lg:max-w-full lg:pl-0 pb-30 lg:pb-0">
+                <div class="grid lg:grid-cols-2 gap-50 items-end">
+                    <div class="image pt-30 sticky bottom-0">
+                        <img src="assets/images/intelligente-lösungen.webp" alt="Intelligente Lösungen für Ihr Zuhause">
+                    </div>
+                    <div class="content flex flex-col justify-center lg:py-50 lg:px-16">
+                        <h2 class="text-h1 font-semibold uppercase mb-15 xl:mb-30">
+                            Intelligente Lösungen für Ihr Zuhause
+                        </h2>
+                        <div class="text">
+                            <p>
+                                Willkommen bei Clemens Sanitär, Ihrem Fachbetrieb für moderne Heizungs-, Sanitär-,
+                                Klima- und Elektrotechnik in Drolshagen. Wir stehen für durchdachte, energieeffiziente
+                                und komfortable Haus - und Gebäudetechnik - individuell geplant, fachgerecht umgesetzt
+                                und zuverlässig betreut. <br>
+                                Ob Sie Ihre Heizung modernisieren, ein neues Bad gestalten oder Ihre Haustechnik auf den
+                                neuesten Stand bringen möchten - seit über 20 Jahren begleiten wir unsere Kunden mit
+                                unserer Erfahrung, persönlicher Beratung und handwerklicher Qualität.
+                                Als regional verwurzelter Meisterbetrieb legen wir besonderen Wert auf Zuverlässigkeit,
+                                saubere Arbeit und transparente Kommunikation. Für Privatkunden, Bauherren und Gewerbe
+                                bieten wir individuelle Lösungen, die passen - technisch, optisch und wirtschaftlich.
+                                <br>
+                                Lernen Sie uns kennen - wir freuen uns auf Ihr Projekt!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section 3 -->
+        <section class="gdnt_red py-35 text-white">
+            <div class="container">
+                <div class="flex gap-x-30 3xl:gap-x-140 gap-y-20 flex-wrap items-center uppercase">
+                    <h2 class="text-h2 font-semibold">
+                        Jetzt Beratungstermin vereinbaren:
+                    </h2>
+                    <div class="flex gap-x-30 3xl:gap-x-140 gap-y-10 text-center flex-wrap w-fit">
+                        <a href="tel:+492761834147"
+                            class="grow bg-white text-red shadow-[7px_7px_0_0_#DB1600] py-8 px-15">
+                            Tel: 0 27 61 / 83 41 47
+                        </a>
+                        <a href="tel:+492761834147"
+                            class="grow bg-white text-red shadow-[7px_7px_0_0_#DB1600] py-8 px-15 flex items-center justify-center gap-12">
+                            <span>Kontakt</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                                <g id="Group_366" data-name="Group 366" transform="translate(-1611 -1756)">
+                                    <circle id="Ellipse_1" data-name="Ellipse 1" cx="15" cy="15" r="15"
+                                        transform="translate(1611 1756)" fill="#ff2d16" />
+                                    <path id="Polygon_1" data-name="Polygon 1" d="M9.5,0,19,12.26H0Z"
+                                        transform="translate(1633.76 1761.5) rotate(90)" fill="#fff" />
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section 4 -->
+        <section class="py-spc">
+            <div class="container">
+                <h2 class="text-h1 font-semibold uppercase mb-30 xl:mb-74">
+                    Unsere Leistungen im Überblick
+                </h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-15 xl:gap-30 2xl:gap-60 text-white mb-spc">
+                    <div
+                        class="gdnt_red aspect-square flex flex-col justify-center items-center gap-10 xl:gap-20 p-20 xl:p-40">
+                        <img src="assets/images/fire.svg" alt="">
+                        <h3 class="text-h2 uppercase font-semibold">
+                            Heizung
+                        </h3>
+                    </div>
+                    <div
+                        class="gdnt_blue aspect-square flex flex-col justify-center items-center gap-10 xl:gap-20 p-20 xl:p-40">
+                        <img src="assets/images/water.svg" alt="">
+                        <h3 class="text-h2 uppercase font-semibold">
+                            Sanitär
+                        </h3>
+                    </div>
+                    <div
+                        class="gdnt_yellow aspect-square flex flex-col justify-center items-center gap-10 xl:gap-20 p-20 xl:p-40">
+                        <img src="assets/images/snow.svg" alt="">
+                        <h3 class="text-h2 uppercase font-semibold">
+                            Klima
+                        </h3>
+                    </div>
+                    <div
+                        class="gdnt_slate aspect-square flex flex-col justify-center items-center gap-10 xl:gap-20 p-20 xl:p-40">
+                        <img src="assets/images/thunder.svg" alt="">
+                        <h3 class="text-h2 uppercase font-semibold">
+                            Elektro
+                        </h3>
+                    </div>
+                </div>
+                <div x-data="{open:false}" class="mb-32 xl:mb-68">
+                    <div class="text">
+                        <p>
+                            Als moderner Fachbetrieb für Heizung, Sanitär, Klimatechnik und Elektrotechnik bieten wir
+                            Ihnen ein breites Spektrum an Dienstleistungen - zuverlässig, fachgerecht und immer mit
+                            Blick auf die besten Lösungen für Ihr Zuhause oder Ihr Unternehmen. <br>
+                            Unsere Arbeit beginnt bei der individuellen Beratung und fachgerechten Planung - abgestimmt
+                            auf Ihre Anforderungen, räumlichen Gegebenheiten und technischen Möglichkeiten. Ob
+                            energieeffiziente Heizsysteme, moderne Bäder, zukunftssichere Klimaanlagen oder durchdachte
+                            Elektroinstallationen - wir begleiten Sie von der ersten Idee
+                            bis zur finalen Umsetzung.
+                        </p>
+                    </div>
+                    <div class="text max-h-0 overflow-hidden transition-all duration-300" x-ref="ex_content"
+                        x-bind:style="open ? 'max-height: ' + $refs.ex_content.scrollHeight + 'px' : ''">
+                        <p>
+                            Dabei erhalten Sie alle Leistungen aus einer Hand: Installation, Wartung, Reparatur und
+                            Modernisierung führen wir mit unserem geschulten Fachpersonal selbst durch. Wir koordinieren
+                            sämtliche Gewerke und bieten Ihnen bei Bedarf einen Komplettservice - zum Beispiel bei der
+                            Badsanierung oder beim Austausch Ihrer Heizungsanlage.
+                            Auch nach Projektabschluss sind wir für Sie da: mit regelmäßiger Wartung, einem
+                            zuverlässigen Kundendienst und einem schnellen Notfallservice. Unser Ziel ist es, Ihnen
+                            Technik zu bieten, die nicht nur funktioniert, sondern Ihnen langfristig Sicherheit,
+                            Effizienz und Komfort schenkt.
+                        </p>
+                        <p>
+                            Lernen Sie unsere Leistungen im Detail kennen - wir freuen uns darauf, auch Ihr Projekt
+                            professionell umzusetzen.
+                        </p>
+                    </div>
+                    <button @click="open = !open" class="border-b">
+                        <span x-show="!open">Mehr erfahren &gt;&gt;</span>
+                        <span x-show="open">Weniger anzeigen &lt;&lt;</span>
+                    </button>
+                </div>
+                <a href="#" class="gdnt_blue text-white py-8 px-16 text-h3 font-semibold uppercase block mx-auto w-fit">
+                    Jetzt anfragen
+                </a>
+            </div>
+        </section>
+        <!-- section 5 -->
+        <section class="gdnt_blue text-white text-h3 uppercase text-center">
+            <div class="container">
+                <div class="grid lg:grid-cols-3 lg:gap-50 items-center">
+                    <div class="border-b border-white/30 last-of-type:border-none lg:border-none py-30 xl:py-50">
+                        <h2>
+                            Mehr als
+                        </h2>
+                        <span class="text-150 inline-block mb-10 font-semibold">
+                            20
+                        </span>
+                        <h3>
+                            Jahre Erfahrung
+                        </h3>
+                    </div>
+                    <div class="border-b border-white/30 last-of-type:border-none lg:border-none py-30 xl:py-50">
+                        <h2>
+                            Verlässliche
+                        </h2>
+                        <span class="text-150 inline-block mb-10 font-semibold">
+                            13
+                        </span>
+                        <h3>
+                            Mitarbeiter & Mitarbeiterinnen
+                        </h3>
+                    </div>
+                    <div class="border-b border-white/30 last-of-type:border-none lg:border-none py-30 xl:py-50">
+                        <h2>
+                            Mehr als
+                        </h2>
+                        <span class="text-150 inline-block mb-10 font-semibold">
+                            500
+                        </span>
+                        <h3>
+                            Verbaute Wärmepumpen
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section 6 -->
+        <section class="py-spc">
+            <div class="container">
+                <h2 class="text-h1 font-semibold uppercase mb-30 xl:mb-80">
+                    Wir bringen Wärme, Wasser, Luft und Strom in Einklang
+                </h2>
+                <div class="grid lg:grid-cols-2 gap-40 xl:gap-80 mb-30 xl:mb-spc">
+                    <div class="text">
+                        <p>
+                            Moderne Gebäudetechnik funktioniert dann am besten, wenn alle Systeme perfekt
+                            aufeinander abgestimmt sind. Als Fachbetrieb für Heizung, Sanitär, Klima und Elektro
+                            sorgen wir dafür, dass Wärme, Wasser, Luft und Strom zuverlässig, effizient und
+                            intelligent zusammenarbeiten - ganz nach Ihren Anforderungen. <br> Ob im Neubau oder bei
+                            der Sanierung: Wir planen und realisieren ganzheitliche Lösungen, bei denen Technik und
+                            Komfort im Einklang stehen. Dazu gehören energieeffiziente Heizsysteme, durchdachte
+                            Sanitärkonzepte, moderne Klimalösungen sowie sichere und leistungsstarke
+                            Elektroinstallationen - alles aus einer Hand, mit System und Kompetenz. <br> Verlassen
+                            Sie sich auf unser Fachwissen, unsere Erfahrung und unseren hohen Qualitätsanspruch -
+                            für Technik, die nicht nur funktioniert, sondern begeistert.
+                        </p>
+                    </div>
+                    <div class="content">
+                        <ul class="cstm_list text-h4 space-y-6" style="--list-image: url(../images/tick.svg)">
+                            <li>
+                                Meisterbetrieb mit über 20 Jahren Erfahrung
+                            </li>
+                            <li>
+                                Freundlicher, lösungsorientierter Kundenservice
+                            </li>
+                            <li>
+                                Heizungsnotdienst: Unser Kundendienst <br> mit 24 Std.-Service ist immer erreichbar
+                            </li>
+                            <li>
+                                Wir sind Ihre Experten für Wärmepumpen
+                            </li>
+                            <li>
+                                Badrenovierung und Badsanierung aus einer Hand
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex gap-40 xl:gap-80 items-center">
+                    <div class="sm:w-1/2">
+                        <a href="#"
+                            class="gdnt_blue text-white py-8 px-16 text-h3 font-semibold uppercase block mx-auto w-fit">
+                            Unternehmen
+                        </a>
+                    </div>
+                    <div class="sm:w-1/2">
+                        <img src="assets/images/home.svg" alt="" class="ml-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section 7 -->
+        <section class="relative z-1 text-center">
+            <div class="container max-w-6xl">
+                <div class="bg-white/90 py-spc px-16 xl:px-30">
+                    <div class="swiper testimonial_swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div>
+                                    <h2 class="text-h1 font-semibold uppercase mb-23 xl:mb-46">
+                                        Kundenstimmen
+                                    </h2>
+                                    <div class="text">
+                                        <p>
+                                            Von der ersten Beratung bis zur fertigen Umsetzung hat einfach alles unserer
+                                            Bad
+                                            Modernisierung gepasst. Die Arbeiten wurden sauber, termingerecht und mit
+                                            viel
+                                            Fachwissen durchgeführt. Besonders gut gefallen hat uns, dass wir alles aus
+                                            einer Hand
+                                            bekommen haben - das spart Zeit und Nerven. Wir können das Team von Herrn
+                                            Clemens
+                                            uneingeschränkt weiterempfehlen!
+                                        </p>
+                                        <p>
+                                            Familie Müller aus Drolshagen
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div>
+                                    <h2 class="text-h1 font-semibold uppercase mb-23 xl:mb-46">
+                                        Kundenstimmen
+                                    </h2>
+                                    <div class="text">
+                                        <p>
+                                            Von der ersten Beratung bis zur fertigen Umsetzung hat einfach alles unserer
+                                            Bad
+                                            Modernisierung gepasst. Die Arbeiten wurden sauber, termingerecht und mit
+                                            viel
+                                            Fachwissen durchgeführt. Besonders gut gefallen hat uns, dass wir alles aus
+                                            einer Hand
+                                            bekommen haben - das spart Zeit und Nerven. Wir können das Team von Herrn
+                                            Clemens
+                                            uneingeschränkt weiterempfehlen!
+                                        </p>
+                                        <p>
+                                            Familie Müller aus Drolshagen
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div>
+                                    <h2 class="text-h1 font-semibold uppercase mb-23 xl:mb-46">
+                                        Kundenstimmen
+                                    </h2>
+                                    <div class="text">
+                                        <p>
+                                            Von der ersten Beratung bis zur fertigen Umsetzung hat einfach alles unserer
+                                            Bad
+                                            Modernisierung gepasst. Die Arbeiten wurden sauber, termingerecht und mit
+                                            viel
+                                            Fachwissen durchgeführt. Besonders gut gefallen hat uns, dass wir alles aus
+                                            einer Hand
+                                            bekommen haben - das spart Zeit und Nerven. Wir können das Team von Herrn
+                                            Clemens
+                                            uneingeschränkt weiterempfehlen!
+                                        </p>
+                                        <p>
+                                            Familie Müller aus Drolshagen
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div>
+                                    <h2 class="text-h1 font-semibold uppercase mb-23 xl:mb-46">
+                                        Kundenstimmen
+                                    </h2>
+                                    <div class="text">
+                                        <p>
+                                            Von der ersten Beratung bis zur fertigen Umsetzung hat einfach alles unserer
+                                            Bad
+                                            Modernisierung gepasst. Die Arbeiten wurden sauber, termingerecht und mit
+                                            viel
+                                            Fachwissen durchgeführt. Besonders gut gefallen hat uns, dass wir alles aus
+                                            einer Hand
+                                            bekommen haben - das spart Zeit und Nerven. Wir können das Team von Herrn
+                                            Clemens
+                                            uneingeschränkt weiterempfehlen!
+                                        </p>
+                                        <p>
+                                            Familie Müller aus Drolshagen
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute -z-1 inset-0">
+                <img src="assets/images/testimonial-sec-bg.webp" alt="Hintergrund des Testimonial-Bereichs"
+                    class="size-full object-cover">
+            </div>
+        </section>
+        <!-- section 8 -->
+        <section class="py-spc">
+            <div class="container">
+                <h2 class="text-h1 font-semibold uppercase mb-20 xl:mb-45">
+                    Aktuelles
+                </h2>
+                <div class="grid md:grid-cols-2 gap-16 lg:gap-30 3xl:gap-148">
+                    <div class="bg-[#B2B2B2]/30 flex flex-col">
+                        <a href="#">
+                            <img src="assets/images/blog2.webp" alt="Blog image 1">
+                        </a>
+                        <div class="grow content flex flex-col px-22 py-36">
+                            <a href="#" class="text-h3 font-semibold uppercase mb-4 xl:mb-8">
+                                Smart Home Installation
+                            </a>
+                            <div class="text mb-17 xl:mb-34">
+                                <p>
+                                    Wir bieten Ihnen ab 2026 die neuste Smart Home Technik, die Ihren Alltag
+                                    komfortabler macht.
+                                </p>
+                            </div>
+                            <a href="#"
+                                class="mt-auto text-blue border border-blue py-8 px-16 text-h4 font-semibold uppercase block mx-auto w-fit">
+                                Mehr erfahren >>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-[#B2B2B2]/30 flex flex-col">
+                        <a href="#">
+                            <img src="assets/images/blog1.webp" alt="Blog image 2">
+                        </a>
+                        <div class="grow content flex flex-col px-22 py-36">
+                            <a href="#" class="text-h3 font-semibold uppercase mb-4 xl:mb-8">
+                                Angebote Bad Einrichtung
+                            </a>
+                            <div class="text mb-17 xl:mb-34">
+                                <p>
+                                    Entdecken Sie unsere attraktiven Angebote für moderne Badeinrichtungen - von der
+                                    stilvollen Armatur bis zur komplett ausgestatteten Wellness-
+                                </p>
+                            </div>
+                            <a href="#"
+                                class="mt-auto text-blue border border-blue py-8 px-16 text-h4 font-semibold uppercase block mx-auto w-fit">
+                                Mehr erfahren >>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="gdnt_blue py-40 text-white">
+        <div class="container">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 2xl:flex flex-wrap gap-30 sm:gap-50 justify-between items-end">
+                <div>
+                    <p class="font-semibold">
+                        Heizung - Sanitär - Klima <br>
+                        Mike Clemens <br>
+                        In der Trift 11A | 57489 Drolshagen
+                    </p>
+                </div>
+                <div>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="Tel+492761834147">Tel.: +49 (0) 27 61 / 83 41 47 </a>
+                            </li>
+                            <li>
+                                <a href="tel:+492761834139">Fax.: +49 (0) 27 61 / 83 41 39</a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@clemens-sanitaer.de">info@clemens-sanitaer.de</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <img src="assets/images/footer-logo1.png" alt="SHK-Innung Kreis Olpe logo">
+                </div>
+                <div>
+                    <img src="assets/images/footer-logo2.png" alt="DAS HANDWERK logo">
+                </div>
+                <div class="flex flex-col 2xl:items-end gap-8 2xl:text-end">
+                    <a href="https://www.instagram.com" class="block">
+                        <img src="assets/images/insta.svg" alt="Instagram-Konto">
+                    </a>
+                    <nav>
+                        <ul class="legal_menu">
+                            <li>
+                                <a href="impressum.html">
+                                    Impressum
+                                </a>
+                            </li>
+                            <li>
+                                <a href="datenschutz.html">
+                                    Datenschutz
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p>
+                        © `25 | MDK MEDIADESIGN ■
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Back to top -->
+    <button x-data="backToTop()" x-show="visible" x-transition.opacity.duration.200="" @click="scrollToTop"
+        class="fixed bottom-15 left-15 gdnt_red p-10 text-white z-10 border" aria-label="Zurück nach oben"
+        title="Zurück nach oben">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M6 15l6 -6l6 6"></path>
+        </svg>
+    </button>
+    <!-- Back to top -->
+
+    <script src="assets/js/swiper.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

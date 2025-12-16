@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+@theme {
+  --spacing: 1px;
+  --spacing-spc: clamp(3.125rem, 2.5rem + 3.125vw, 6.25rem);
+
+  --breakpoint-*: initial;
+
+  --breakpoint-xsm: 450px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1400px;
+  --breakpoint-3xl: 1612px;
+
+  --color-red: #FF2C15;
+  --color-blue: #026BBA;
+  --color-yellow: #FFC633;
+  --color-slate: #8E8E8E;
+
+  --font-exo: "Exo 2", "Montserrat", "Roboto", "Open Sans", "Segoe UI";
+
+  --text-h1: clamp(2rem, 1.775rem + 1.125vw, 3.125rem);
+  /* 32-50 */
+  --text-h1--line-height: clamp(2.625rem, 2.4rem + 1.125vw, 3.75rem);
+  /* 42-60 */
+  --text-h1--font-weight: 600;
+
+  --text-h2: clamp(1.75rem, 1.6rem + 0.75vw, 2.5rem);
+  /* 28-40 */
+  --text-h2--line-height: clamp(2.375rem, 2.225rem + 0.75vw, 3.125rem);
+  /* 38-50 */
+  --text-h2--font-weight: 600;
+
+  --text-h3: clamp(1.5rem, 1.425rem + 0.375vw, 1.875rem);
+  /* 24-30 */
+  --text-h3--line-height: clamp(2.125rem, 2.05rem + 0.375vw, 2.5rem);
+  /* 34-40 */
+  --text-h3--font-weight: 600;
+
+  --text-h4: clamp(1.25rem, 1.1875rem + 0.3125vw, 1.5625rem);
+  /* 20-25 */
+  --text-h4--line-height: clamp(1.875rem, 1.8125rem + 0.3125vw, 2.1875rem);
+  /* 30-35 */
+
+  --text-h5: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  /* 16-20 */
+  --text-h5--line-height: clamp(1.625rem, 1.575rem + 0.25vw, 1.875rem);
+  /* 26-30 */
+
+  --text-150: clamp(4.6875rem, 3.75rem + 4.6875vw, 9.375rem);
+  /* 75-150 */
+  --text-150--line-height: clamp(4.6875rem, 3.75rem + 4.6875vw, 9.375rem);
+  /* 75-150 */
+
+  /* --shadow-1: 0px 3px 6px #00000029; */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/exo-2-v26-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/exo-2-v26-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/exo-2-v26-latin-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/exo-2-v26-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/exo-2-v26-latin-800.woff2') format('woff2');
+}
+
+@layer base {
+
+  body {
+    @apply text-h5 font-exo
+  }
+
+  .container {
+    @apply px-16 mx-auto
+  }
+
+  .gdnt_red {
+    background: #B51200;
+    background: linear-gradient(0deg, rgba(181, 18, 0, 1) 0%, rgba(255, 45, 22, 1) 50%);
+  }
+
+  .gdnt_blue {
+    background: #013A65;
+    background: linear-gradient(0deg, rgba(1, 58, 101, 1) 0%, rgba(2, 107, 187, 1) 50%);
+  }
+
+  .gdnt_yellow {
+    background: #D3A426;
+    background: linear-gradient(0deg, rgba(211, 164, 38, 1) 0%, rgba(255, 199, 51, 1) 50%);
+  }
+
+  .gdnt_slate {
+    background: #505050;
+    background: linear-gradient(0deg, rgba(80, 80, 80, 1) 0%, rgba(142, 142, 142, 1) 50%);
+  }
+
+  .primary_menu {
+    @apply grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-15 md:gap-30 xl:flex xl:gap-80 text-h4 flex-wrap
+  }
+
+  .primary_menu>li>a {
+    @apply uppercase font-semibold mb-10 inline-block
+  }
+
+  .primary_menu ul li::before {
+    @apply content-['•'] text-sm align-middle inline-block -mt-4
+  }
+
+  .primary_menu a.active {
+    @apply text-yellow
+  }
+
+  .text {
+    @apply space-y-8 xl:space-y-16
+  }
+
+  .cstm_list li::before {
+    @apply content-[''] size-20 bg-cover block shrink-0;
+    background-image: var(--list-image);
+  }
+
+  .cstm_list li {
+    @apply flex items-center gap-12
+  }
+
+  .testimonial_swiper .swiper-pagination {
+    @apply !static mt-20 xl:mt-90
+  }
+
+  .legal_menu{
+    @apply flex 
+  }
+
+  .legal_menu li{
+    @apply px-10 border-r leading-22 first-of-type:pl-0 last-of-type:pr-0 last-of-type:border-none 
+  }
+}
+
+.swiper-pagination-bullet {
+  height: 2px;
+  width: clamp(1.875rem, 1.3125rem + 2.8125vw, 4.6875rem);
+  background-color: #fff;
+  opacity: 1;
+  border-radius: 0;
+  margin: 0 clamp(0.25rem, 0.15rem + 0.5vw, 0.75rem) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--color-blue);
+}
+
+.home_hero_swiper .swiper-pagination {
+  bottom: 40px !important;
+}
+
+.testimonial_swiper .swiper-pagination-bullet {
+  height: 9px;
+  border: 1px solid var(--color-blue);
+}
