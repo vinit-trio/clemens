@@ -360,11 +360,14 @@
   .table {
     display: table;
   }
+  .aspect-2\/1 {
+    aspect-ratio: 2/1;
+  }
   .aspect-\[1\.96\/1\] {
     aspect-ratio: 1.96/1;
   }
-  .aspect-\[2\.53\/1\] {
-    aspect-ratio: 2.53/1;
+  .aspect-\[2\/1\] {
+    aspect-ratio: 2/1;
   }
   .aspect-square {
     aspect-ratio: 1 / 1;
