@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Komplettlösungen für Heizung, Sanitär, Klima und Elektro">
+
+    <title>Clemens | Unternehmen</title>
+
+    <!-- Favicons -->
+    <link rel="icon" href="assets/images/favicon-light.png" type="image/png">
+    <link rel="icon" href="assets/images/favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+    <link rel="apple-touch-icon" href="assets/images/favicon-light.png" sizes="180x180"
+        media="(prefers-color-scheme: light)">
+    <link rel="apple-touch-icon" href="assets/images/favicon-dark.png" sizes="180x180"
+        media="(prefers-color-scheme: dark)">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Alpine -->
+    <script src="assets/js/alpine.js" defer></script>
+
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div x-data="{ show: true }" x-init="setTimeout(() =&gt; show = false)" x-show="show"
+        x-transition.opacity.duration.1000ms="" class="fixed inset-0 bg-white z-999999"></div>
+    <!-- loader -->
+
+    <!-- Header -->
+    <header class="py-13 xl:py-26 h-100 md:h-125 xl:h-150 flex items-center sticky top-0 z-20 bg-white/90"
+        x-data="{ open: false }" @keydown.window.escape="open = false"
+        @click="if ($event.target.tagName === 'A') open = false">
+        <div class="container">
+            <div class="flex items-center justify-between">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="Mike Clemens" class="w-150 md:w-215">
+                </a>
+                <div class="flex items-center gap-30 lg:gap-65">
+                    <div class="hidden md:flex gdnt_red text-white gap-12 xl:gap-24 py-8 px-15">
+                        <img src="assets/images/fire.svg" alt="" class="w-45">
+                        <div class="flex flex-col">
+                            <span class="text-h5 font-bold uppercase">24 Std.-Heizungsnotdienst</span>
+                            <a class="text-base" href="tel:+492761834147">Tel: 0 27 61 / 83 41 47</a>
+                            <a class="text-base" href="tel:+491775625368">Mobil: 01 77 / 5 62 53 68</a>
+                        </div>
+                    </div>
+                    <button @click="open = !open" class="relative size-50 xl:size-80" aria-label="Hauptmenü-Umschalter">
+                        <img src="assets/images/menu.svg" alt="" class="absolute inset-0 transition-all duration-300"
+                            :class="open ? 'opacity-0 -rotate-180' : ''">
+                        <img src="assets/images/close.svg" alt="" class="absolute inset-0 transition-all duration-300"
+                            :class="open ? '' : 'opacity-0 rotate-180'">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Panel -->
+        <div x-show="open" x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300"
+            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+            class="fixed inset-0 bg-blue/90 text-white z-20 p-6 top-100 md:top-125 xl:top-150">
+            <div class="h-full overflow-y-auto">
+                <div class="container py-44 lg:py-88">
+                    <nav>
+                        <ul class="primary_menu">
+                            <li>
+                                <a href="index.html" class="active">
+                                    Startseite
+                                </a>
+                            </li>
+                            <li>
+                                <a href="unternehmen.html">
+                                    Unternehmen
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="unternehmen.html#unser-team">Unser Team </a>
+                                    </li>
+                                    <li>
+                                        <a href="unternehmen.html#werte&motivation">Werte & Motivation </a>
+                                    </li>
+                                    <li>
+                                        <a href="unternehmen.html#zertifikate&partner">Zertifikate & Partner</a>
+                                    </li>
+                                    <li>
+                                        <a href="unternehmen.html#karriere">Karriere</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="leistungen.html">
+                                    Leistungen
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="leistungen.html#heizung">Heizung</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#sanitär">Sanitär</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#klima">Klima</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#elektro">Elektro</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="leistungen.html">
+                                    Service
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="leistungen.html#heizung">Heizung</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#sanitär">Sanitär</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#klima">Klima</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#elektro">Elektro</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="referenzen.html">
+                                    Referenzen
+                                </a>
+                            </li>
+                            <li>
+                                <a href="kontakt.html">
+                                    Kontakt
+                                </a>
+                            </li>
+                            <li>
+                                <a href="aktuelles.html">
+                                    Aktuelles
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header -->
+
+    <main>
+
+        <!-- section 1 -->
+        <section
+            class="bg-blue relative z-1 overflow-hidden sm:min-h-[calc(100dvh-150px)] flex flex-col justify-end sm:pt-300 sm:pb-150">
+            <div class="container 4xl:max-w-full 4xl:pl-0!">
+                <div
+                    class="bg-blue sm:bg-blue/90 text-white py-16 xsm:py-40 sm:p-30 w-fit 4xl:pl-[calc((100%-1610px)/2)]!">
+                    <h1 class="text-h1 font-semibold uppercase">
+                        Kompetenz vor Ort - <br>
+                        Ihr Fachbetrieb für Heizung, Sanitär, Klima & Elektro
+                    </h1>
+                </div>
+            </div>
+            <div class="w-full not-sm:aspect-video sm:absolute inset-0 -z-1 -order-1">
+                <img src="assets/images/unternehmen-hero-bg.webp" class="size-full object-cover" fetchpriority="high"
+                    alt="Unternehmen hero bg">
+            </div>
+        </section>
+
+        <!-- section 2 -->
+        <section class="py-spc">
+            <div class="container">
+                <div class="grid lg:grid-cols-2 gap-22 xl:gap-45">
+                    <div class="images">
+                        <img src="assets/images/moderne-haustechnik.webp" alt="moderne Haustechnik - persönlich & nah">
+                    </div>
+                    <div class="content">
+                        <h2 class="text-h1 uppercase font-semibold mb-14 xl:mb-28">
+                            moderne Haustechnik - persönlich & nah
+                        </h2>
+                        <div class="text">
+                            <p>
+                                Als regionaler Fachbetrieb aus Drolshagen im Kreis Olpe stehen wir seit über
+                                20 Jahren für zuverlässige Leistungen rund um Heizung, Sanitär, Klima und
+                                Elektrotechnik. Dabei verbinden wir moderne Technik mit echter Handwerksqualität - und
+                                legen großen Wert auf persönliche Beratung, saubere Ausführung und direkten
+                                Kundenkontakt.
+                            </p>
+                            <p>
+                                Ob Neubau, Sanierung oder Wartung: Wir begleiten Sie mit Fachwissen, Erfahrung und dem
+                                Anspruch, für jede Anforderung die beste Lösung zu finden - nah, ehrlich und auf
+                                Augenhöhe.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 3 -->
+        <section class="gdnt_red py-35 text-white">
+            <div class="container">
+                <div class="flex gap-x-30 3xl:gap-x-140 gap-y-20 flex-wrap items-center uppercase">
+                    <h2 class="text-h2 font-semibold">
+                        Jetzt Beratungstermin vereinbaren:
+                    </h2>
+                    <div class="flex gap-x-30 3xl:gap-x-140 gap-y-10 text-center flex-wrap w-fit">
+                        <a href="tel:+492761834147"
+                            class="grow bg-white text-[#EB1700] shadow-[7px_7px_0_0_#DB1600] py-8 px-15 hover:bg-red hover:text-white transition-all duration-300 border">
+                            Tel: 0 27 61 / 83 41 47
+                        </a>
+                        <a href="kontakt.html"
+                            class="grow bg-white text-[#EB1700] shadow-[7px_7px_0_0_#DB1600] py-8 px-15 hover:bg-red hover:text-white transition-all duration-300 border flex items-center justify-center gap-12">
+                            <span>Kontakt</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                                <g id="Group_366" data-name="Group 366" transform="translate(-1611 -1756)">
+                                    <circle id="Ellipse_1" data-name="Ellipse 1" cx="15" cy="15" r="15"
+                                        transform="translate(1611 1756)" fill="#ff2d16" />
+                                    <path id="Polygon_1" data-name="Polygon 1" d="M9.5,0,19,12.26H0Z"
+                                        transform="translate(1633.76 1761.5) rotate(90)" fill="#fff" />
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 4 -->
+        <section class="xl:mt-40 gdnt_blue text-white py-spc text-center">
+            <div class="container">
+                <h2 class="text-h1 uppercase font-semibold mb-38 xl:mb-76">
+                    Werte & Motivation
+                </h2>
+                <div class="flex flex-wrap items-center justify-center gap-y-50 xl:gap-y-70 mb-44 xl:mb-88">
+                    <div class="w-full lg:w-1/2 lg:px-25 xl:px-40">
+                        <div class="icon w-85 sm:w-120 mb-10 xl:mb-20 mx-auto">
+                            <img src="assets/images/location.svg" alt="">
+                        </div>
+                        <h3 class="text-h3 uppercase font-semibold">
+                            Nachhaltigkeit & Zukunftsorientierung
+                        </h3>
+                        <ul class="list_dot">
+                            <li>
+                                Mit modernen Heizsystemen, energiesparenden Lösungen und
+                                umweltfreundlicher Technik gestalten wir eine nachhaltige Zukunft.
+                            </li>
+                            <li>
+                                Wir beraten unsere Kunden stets auf dem aktuellen Stand der Technik -
+                                effizient, ökologisch und wirtschaftlich.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="w-full lg:w-1/2 lg:px-25 xl:px-40">
+                        <div class="icon w-85 sm:w-100 mb-10 xl:mb-20 mx-auto">
+                            <img src="assets/images/location.svg" alt="">
+                        </div>
+                        <h3 class="text-h3 uppercase font-semibold">
+                            Nachhaltigkeit & Zukunftsorientierung
+                        </h3>
+                        <ul class="list_dot">
+                            <li>
+                                Mit modernen Heizsystemen, energiesparenden Lösungen und
+                                umweltfreundlicher Technik gestalten wir eine nachhaltige Zukunft.
+                            </li>
+                            <li>
+                                Wir beraten unsere Kunden stets auf dem aktuellen Stand der Technik -
+                                effizient, ökologisch und wirtschaftlich.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="w-full lg:w-1/2 lg:px-25 xl:px-40">
+                        <div class="icon w-85 sm:w-100 mb-10 xl:mb-20 mx-auto">
+                            <img src="assets/images/location.svg" alt="">
+                        </div>
+                        <h3 class="text-h3 uppercase font-semibold">
+                            Nachhaltigkeit & Zukunftsorientierung
+                        </h3>
+                        <ul class="list_dot">
+                            <li>
+                                Mit modernen Heizsystemen, energiesparenden Lösungen und
+                                umweltfreundlicher Technik gestalten wir eine nachhaltige Zukunft.
+                            </li>
+                            <li>
+                                Wir beraten unsere Kunden stets auf dem aktuellen Stand der Technik -
+                                effizient, ökologisch und wirtschaftlich.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="w-full lg:w-1/2 lg:px-25 xl:px-40">
+                        <div class="icon w-85 sm:w-100 mb-10 xl:mb-20 mx-auto">
+                            <img src="assets/images/location.svg" alt="">
+                        </div>
+                        <h3 class="text-h3 uppercase font-semibold">
+                            Nachhaltigkeit & Zukunftsorientierung
+                        </h3>
+                        <ul class="list_dot">
+                            <li>
+                                Mit modernen Heizsystemen, energiesparenden Lösungen und
+                                umweltfreundlicher Technik gestalten wir eine nachhaltige Zukunft.
+                            </li>
+                            <li>
+                                Wir beraten unsere Kunden stets auf dem aktuellen Stand der Technik -
+                                effizient, ökologisch und wirtschaftlich.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="w-full lg:w-1/2 lg:px-25 xl:px-40">
+                        <div class="icon w-85 sm:w-100 mb-10 xl:mb-20 mx-auto">
+                            <img src="assets/images/location.svg" alt="">
+                        </div>
+                        <h3 class="text-h3 uppercase font-semibold">
+                            Nachhaltigkeit & Zukunftsorientierung
+                        </h3>
+                        <ul class="list_dot">
+                            <li>
+                                Mit modernen Heizsystemen, energiesparenden Lösungen und
+                                umweltfreundlicher Technik gestalten wir eine nachhaltige Zukunft.
+                            </li>
+                            <li>
+                                Wir beraten unsere Kunden stets auf dem aktuellen Stand der Technik -
+                                effizient, ökologisch und wirtschaftlich.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="w-full lg:w-1/2 lg:px-25 xl:px-40">
+                        <div class="icon w-85 sm:w-100 mb-10 xl:mb-20 mx-auto">
+                            <img src="assets/images/location.svg" alt="">
+                        </div>
+                        <h3 class="text-h3 uppercase font-semibold">
+                            Nachhaltigkeit & Zukunftsorientierung
+                        </h3>
+                        <ul class="list_dot">
+                            <li>
+                                Mit modernen Heizsystemen, energiesparenden Lösungen und
+                                umweltfreundlicher Technik gestalten wir eine nachhaltige Zukunft.
+                            </li>
+                            <li>
+                                Wir beraten unsere Kunden stets auf dem aktuellen Stand der Technik -
+                                effizient, ökologisch und wirtschaftlich.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="w-full lg:w-1/2 lg:px-25 xl:px-40">
+                        <div class="icon w-85 sm:w-100 mb-10 xl:mb-20 mx-auto">
+                            <img src="assets/images/location.svg" alt="">
+                        </div>
+                        <h3 class="text-h3 uppercase font-semibold">
+                            Nachhaltigkeit & Zukunftsorientierung
+                        </h3>
+                        <ul class="list_dot">
+                            <li>
+                                Mit modernen Heizsystemen, energiesparenden Lösungen und
+                                umweltfreundlicher Technik gestalten wir eine nachhaltige Zukunft.
+                            </li>
+                            <li>
+                                Wir beraten unsere Kunden stets auf dem aktuellen Stand der Technik -
+                                effizient, ökologisch und wirtschaftlich.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="javascript:;" class="gdnt_red text-white py-8 px-16 text-h3 font-semibold uppercase block mx-auto w-fit">
+                    Jetzt Kontaktieren
+                </a>
+            </div>
+        </section>
+
+        <!-- section 5 -->
+        <section>
+            <div class="image aspect-video xl:aspect-[2.53/1]">
+                <img src="assets/images/heat-pump.webp" alt="Wärmepumpe in der Nähe eines modernen Gebäudes"
+                    class="size-full object-cover">
+            </div>
+        </section>
+
+        <!-- section 6 -->
+        <section class="py-spc">
+            <div class="container">
+                <div class="grid lg:grid-cols-2 gap-40">
+                    <div>
+                        <h2 class="text-h1 uppercase font-semibold mb-30 xl:mb-60">
+                            Zertifikate
+                        </h2>
+                        <div class="max-w-600 grid xsm:grid-cols-2 text-center gap-y-50 gap-x-30 xl:gap-x-40">
+                            <a href="javascript:;">
+                                <img src="assets/images/pdf-icon.svg" alt="" class="mx-auto mb-8 xl:mb-16">
+                                <h3 class="text">
+                                    Energieberater & Gutachter für Haustechnik (DEKRA)
+                                </h3>
+                            </a>
+                            <a href="javascript:;">
+                                <img src="assets/images/pdf-icon.svg" alt="" class="mx-auto mb-8 xl:mb-16">
+                                <h3 class="text">
+                                    ChemKlimaschutzV Kälte- Klimaanlagen, Wärmepumpen
+                                </h3>
+                            </a>
+                            <a href="javascript:;">
+                                <img src="assets/images/pdf-icon.svg" alt="" class="mx-auto mb-8 xl:mb-16">
+                                <h3 class="text">
+                                    Fortbildung Öl- Gasanlagen
+                                </h3>
+                            </a>
+                            <a href="javascript:;">
+                                <img src="assets/images/pdf-icon.svg" alt="" class="mx-auto mb-8 xl:mb-16">
+                                <h3 class="text">
+                                    Fachbetriebsschulung Wasserhaushaltsgesetz Heizölverbraucheranlagen
+                                </h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-h1 uppercase font-semibold mb-30 xl:mb-60">
+                            Unsere Partner
+                        </h2>
+                        <div class="grid grid-cols-2 gap-14 xl:gap-28 items-center">
+                            <a href="javascript:;" class="partner-logo">
+                                <img src="assets/images/viessmann-logo.png" alt="">
+                            </a>
+                            <a href="javascript:;" class="partner-logo">
+                                <img src="assets/images/weishaupt-logo.png" alt="">
+                            </a>
+                            <a href="javascript:;" class="partner-logo">
+                                <img src="assets/images/miele-logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 7 -->
+        <section
+            class="bg-white relative z-1 overflow-hidden sm:min-h-[calc(100dvh-150px)] flex flex-col justify-end sm:pt-300 sm:pb-66">
+            <div class="container 4xl:max-w-full 4xl:pl-0!">
+                <div
+                    class="bg-white sm:bg-white/90 text-blue py-16 xsm:py-40 sm:p-30 w-full 2xl:w-1/2 4xl:pl-[calc((100%-1610px)/2)]!">
+                    <h2 class="text-h1 font-semibold uppercase">
+                        Schule vorbei? <br> Starte mit uns durch!
+                    </h2>
+                    <div class="text">
+                        <p>
+                            „Ein Beruf mit Zukunft - und viel Technik.
+                            Wir sind viel unterwegs, arbeiten im Team und sehen am Ende des Tages, was wir geschafft
+                            haben - das motiviert! Außerdem hat man in der SHK Branche super Zukunftsaussichten, denn
+                            gute Fachkräfte werden überall gesucht.
+                            Wenn du gerne praktisch arbeitest und Technik spannend findest, ist das genau der richtige
+                            Beruf für dich!“
+                            R. Schneider, Azubi
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full not-sm:aspect-video sm:absolute inset-0 -z-1 -order-1">
+                <img src="assets/images/kopie-erweitert.webp" class="size-full object-cover" fetchpriority="high"
+                    alt="Unternehmen hero bg">
+            </div>
+        </section>
+
+        <section class="py-spc gdnt_blue text-white">
+            <div class="container">
+                <h2 class="text-h1 font-semibold uppercase mb-30 xl:mb-60">
+                    Schule vorbei? <br>
+                    Starte durch mit einer Ausbildung, die Zukunft hat!
+                </h2>
+                <div class="grid lg:grid-cols-2 gap-40 xl:gap-80 mb-46 xl:mb-96">
+                    <div>
+                        <h3 class="text-h3 font-semibold mb-14 xl:mb-26 *:uppercase">
+                            Zukunft bauen statt nur zusehen - <br>
+                            deine Ausbildung zum/zur: <br>
+                            <span>Anlagenmechaniker/in für Sanitär-, Heizungs- und Klimatechnik (SHK)</span>
+                        </h3>
+                        <div x-data="{open:false}">
+                            <div class="text">
+                                <p>
+                                    Du willst was Praktisches machen, was bewegen und mit Technik arbeiten, die wirklich
+                                    Sinn ergibt? Dann ist die Ausbildung als Anlagenmechaniker/in für Sanitär-,
+                                    Heizungs- und Klimatechnik (SHK) genau dein Ding!
+                                </p>
+                                <p>
+                                    Ob Klimaschutz, Trinkwasserhygiene, Energieeffizienz oder smarter Wohnkomfort - du
+                                    wirst gebraucht! In einem Job mit Zukunft, Abwechslung und besten
+                                    Entwicklungschancen. Und das ganz in deiner Nähe - bei uns im Kreis Olpe!
+                                </p>
+                                <h4 class="text-h3">
+                                    Was dich erwartet - dein Ausbildungsalltag
+                                </h4>
+                                <ul class="list_dash">
+                                    <li>
+                                        Du installierst und wartest Heizungen, Bäder, Lüftungs- und Klimaanlagen
+                                    </li>
+                                    <li>
+                                        Du planst moderne Bäder und setzt sie professionell um
+                                    </li>
+                                    <li>
+                                        Du baust Solaranlagen und arbeitest mit neuen Energietechniken
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="text max-h-0 overflow-hidden transition-all duration-300" x-ref="ex_content"
+                                x-bind:style="open ? 'max-height: ' + $refs.ex_content.scrollHeight + 'px' : ''">
+                                <ul class="list_dash">
+                                    <li>
+                                        Du bist auch im Smart Home Bereich unterwegs
+                                    </li>
+                                    <li>
+                                        Du hast direkten Kontakt zu Kunden und siehst jeden Tag, was du geschafft hast
+                                    </li>
+                                </ul>
+                                <h4 class="text-h3">
+                                    Was du mitbringen solltest
+                                </h4>
+                                <ul class="list_dash">
+                                    <li>
+                                        Technik begeistert dich
+                                    </li>
+                                    <li>
+                                        Du packst gern mit an und magst praktisches Arbeiten
+                                    </li>
+                                    <li>
+                                        Mathe ist für dich kein Fremdwort
+                                    </li>
+                                    <li>
+                                        Du arbeitest gern im Team
+                                    </li>
+                                    <li>
+                                        Egal ob Hauptschule, Realschule oder Abi - bei uns zählt, dass du motiviert
+                                        bist!
+                                    </li>
+                                </ul>
+                                <h4 class="text-h3">
+                                    So läuft deine Ausbildung
+                                </h4>
+                                <ul class="list_dash">
+                                    <li>
+                                        Dauer: 3,5 Jahre (kann verkürzt werden)
+                                    </li>
+                                    <li>
+                                        Mix aus Betrieb, Berufsschule & Werkstatt-Training
+                                    </li>
+                                    <li>
+                                        Du arbeitest im Kundendienst, auf Baustellen, in der Werkstatt oder auch im Büro
+                                        bei der Planung
+                                    </li>
+                                    <li>
+                                        Du kannst dich später spezialisieren: z. B. auf Sanitär, Heizung, Klima oder
+                                        erneuerbare Energien
+                                    </li>
+                                    <li>
+                                        Familiäres Team, viel Abwechslung und echtes Handwerk mit Zukunft
+                                    </li>
+                                </ul>
+                                <h4 class="text-h3">
+                                    Und danach? Geht's richtig los!
+                                </h4>
+                                <ul class="list_dash">
+                                    <li>
+                                        Gute Bezahlung
+                                    </li>
+                                    <li>
+                                        Aufstieg zum/zur Techniker/in, Meister/in, Bachelor oder sogar Master
+                                    </li>
+                                    <li>
+                                        Oder: Mach dich selbstständig und starte dein eigenes Business im SHK-Handwerk
+                                    </li>
+                                </ul>
+                            </div>
+                            <button @click="open = !open" class="border-b">
+                                <span x-show="!open">Mehr erfahren &gt;&gt;</span>
+                                <span x-show="open">&lt;&lt; Weniger anzeigen</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="space-y-40 xl:space-y-80">
+                        <div>
+                            <h3 class="text-h3 font-semibold mb-14 xl:mb-26">
+                                ✅ Vorteile der Ausbildung <br>
+                                zum/zur Anlagenmechaniker/in SHK
+                            </h3>
+                            <div x-data="{open:false}">
+                                <div class="text">
+                                    <ul class="list_dash">
+                                        <li>
+                                            Abwechslungsreicher Arbeitsalltag - Kein Tag ist wie der andere
+                                        </li>
+                                        <li>
+                                            Sinnvolle Tätigkeit - Du arbeitest für Klimaschutz, Energieeffizienz &
+                                            Trinkwasserhygiene
+                                        </li>
+                                        <li>
+                                            Moderne Technik - Einsatz von Smart Home, Solarthermie, Wärmepumpen u. v. m.
+
+                                        </li>
+                                        <li>
+                                            Schnelle Erfolgserlebnisse - Du siehst direkt, was du geschafft hast
+                                        </li>
+                                        <li>
+                                            Gute Bezahlung schon in der Ausbildung
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="text max-h-0 overflow-hidden transition-all duration-300" x-ref="ex_content"
+                                    x-bind:style="open ? 'max-height: ' + $refs.ex_content.scrollHeight + 'px' : ''">
+                                    <ul class="list_dash">
+                                        <li>
+                                            Teamarbeit & Kundenkontakt - Technik trifft auf Kommunikation
+                                        </li>
+                                        <li>
+                                            Kombination aus Handwerk, Technik & Planung
+                                        </li>
+                                        <li>
+                                            Krisensicherer Beruf - SHK wird immer gebraucht
+                                        </li>
+                                        <li>
+                                            Regionale Jobmöglichkeiten - Arbeiten in der Heimat, ohne pendeln zu müssen
+                                        </li>
+                                        <li>
+                                            Praktisches Arbeiten mit Verantwortung
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button @click="open = !open" class="border-b">
+                                    <span x-show="!open">Mehr erfahren &gt;&gt;</span>
+                                    <span x-show="open">&lt;&lt; Weniger anzeigen</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-h3 font-semibold mb-14 xl:mb-26">
+                                🚀 Zukunftschancen & Karrierewege
+                            </h3>
+                            <div x-data="{open:false}">
+                                <div class="text">
+                                    <ul class="list_dash">
+                                        <li>
+                                            Fachkräftemangel = hohe Nachfrage nach gut ausgebildeten SHK-Monteuren
+                                        </li>
+                                        <li>
+                                            Vielfältige Spezialisierungen:
+                                        </li>
+                                        <li>
+                                            Heizungstechnik
+                                        </li>
+                                        <li>
+                                            Sanitärtechnik
+                                        </li>
+                                        <li>
+                                            Klimatechnik / Lüftung
+                                        </li>
+                                        <li>
+                                            Erneuerbare Energien & Umwelttechnik
+                                        </li>
+                                        <li>
+                                            Gute Verdienstmöglichkeiten mit Berufserfahrung
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="text max-h-0 overflow-hidden transition-all duration-300" x-ref="ex_content"
+                                    x-bind:style="open ? 'max-height: ' + $refs.ex_content.scrollHeight + 'px' : ''">
+                                    <ul class="list_dash">
+                                        <li>
+                                            Aufstiegsmöglichkeiten:
+                                        </li>
+                                        <li>
+                                            Techniker/in
+                                        </li>
+                                        <li>
+                                            Meister/in
+                                        </li>
+                                        <li>
+                                            Studium (Bachelor/Master z. B. Versorgungstechnik, Energie- &
+                                            Gebäudetechnik)
+                                        </li>
+                                        <li>
+                                            Selbstständigkeit - Eigener Betrieb möglich nach der Meisterprüfung
+                                        </li>
+                                        <li>
+                                            Weiterbildung im Bereich Digitalisierung & Gebäudetechnik
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button @click="open = !open" class="border-b">
+                                    <span x-show="!open">Mehr erfahren &gt;&gt;</span>
+                                    <span x-show="open">&lt;&lt; Weniger anzeigen</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white text-blue p-25 xl:p-50">
+                    <h2 class="text-h1 uppercase font-semibold mb-20 xl:mb-40">
+                        Praktikum oder Ferienjob? Schau bei uns rein!
+                    </h2>
+                    <div class="grid lg:grid-cols-2 gap-40 xl:gap-80">
+                        <div class="text">
+                            <p>
+                                Du willst wissen, ob der Beruf Anlagenmechaniker/in SHK etwas für dich ist?
+                                Dann mach doch einfach ein Praktikum oder Ferienarbeit bei uns!
+                            </p>
+                            <ul>
+                                <li>
+                                    🔧 Lerne den Arbeitsalltag im Handwerk kennen
+                                </li>
+                                <li>
+                                    ⚙ Sammle echte Erfahrungen mit moderner Technik
+                                </li>
+                                <li>
+                                    👥 Arbeite im Team mit und finde heraus, was dir liegt
+                                </li>
+                            </ul>
+                            <p>
+                                Ob Schülerpraktikum, freiwilliges Schnuppern oder Ferienjob - <br>
+                                du bist jederzeit willkommen! <br>
+                                Melde dich einfach bei uns - wir freuen uns auf dich!
+                            </p>
+                            <p>
+                                👉 Jetzt <a href="kontakt.html" class="underline">Kontakt</a> aufnehmen und
+                                reinschnuppern!
+                            </p>
+                        </div>
+                        <a href="javascript:;" class="video aspect-[1.96/1] relative">
+                            <img src="assets/images/video-thumb.webp" alt="" class="size-full object-cover">
+                            <svg class="w-50 3xl:w-100 absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
+                                xmlns="http://www.w3.org/2000/svg" width="113" height="113" viewBox="0 0 113 113">
+                                <g id="Group_370" data-name="Group 370" transform="translate(-1289 -7156)">
+                                    <circle id="Ellipse_6" data-name="Ellipse 6" cx="56.5" cy="56.5" r="56.5"
+                                        transform="translate(1289 7156)" fill="#ff2d16" />
+                                    <path id="Polygon_6" data-name="Polygon 6" d="M35.716,0,71.433,46.093H0Z"
+                                        transform="translate(1374.146 7176.678) rotate(90)" fill="#fff" />
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-spc gdnt_slate text-white">
+            <div class="container">
+                <h2 class="text-h1 font-semibold uppercase mb-30 xl:mb-60">
+                    Schule vorbei? <br>
+                    Starte durch mit einer Ausbildung, die Zukunft hat!
+                </h2>
+                <div class="grid lg:grid-cols-2 gap-40 xl:gap-80 mb-46 xl:mb-96">
+                    <div>
+                        <h3 class="text-h3 font-semibold mb-14 xl:mb-26 *:uppercase">
+                            Zukunft bauen statt nur zusehen - <br>
+                            deine Ausbildung zum/zur: <br>
+                            <span>Anlagenmechaniker/in für Sanitär-, Heizungs- und Klimatechnik (SHK)</span>
+                        </h3>
+                        <div x-data="{open:false}">
+                            <div class="text">
+                                <p>
+                                    Du willst was Praktisches machen, was bewegen und mit Technik arbeiten, die wirklich
+                                    Sinn ergibt? Dann ist die Ausbildung als Anlagenmechaniker/in für Sanitär-,
+                                    Heizungs- und Klimatechnik (SHK) genau dein Ding!
+                                </p>
+                                <p>
+                                    Ob Klimaschutz, Trinkwasserhygiene, Energieeffizienz oder smarter Wohnkomfort - du
+                                    wirst gebraucht! In einem Job mit Zukunft, Abwechslung und besten
+                                    Entwicklungschancen. Und das ganz in deiner Nähe - bei uns im Kreis Olpe!
+                                </p>
+                                <h4 class="text-h3">
+                                    Was dich erwartet - dein Ausbildungsalltag
+                                </h4>
+                                <ul class="list_dash">
+                                    <li>
+                                        Du installierst und wartest Heizungen, Bäder, Lüftungs- und Klimaanlagen
+                                    </li>
+                                    <li>
+                                        Du planst moderne Bäder und setzt sie professionell um
+                                    </li>
+                                    <li>
+                                        Du baust Solaranlagen und arbeitest mit neuen Energietechniken
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="text max-h-0 overflow-hidden transition-all duration-300" x-ref="ex_content"
+                                x-bind:style="open ? 'max-height: ' + $refs.ex_content.scrollHeight + 'px' : ''">
+                                <ul class="list_dash">
+                                    <li>
+                                        Du bist auch im Smart Home Bereich unterwegs
+                                    </li>
+                                    <li>
+                                        Du hast direkten Kontakt zu Kunden und siehst jeden Tag, was du geschafft hast
+                                    </li>
+                                </ul>
+                                <h4 class="text-h3">
+                                    Was du mitbringen solltest
+                                </h4>
+                                <ul class="list_dash">
+                                    <li>
+                                        Technik begeistert dich
+                                    </li>
+                                    <li>
+                                        Du packst gern mit an und magst praktisches Arbeiten
+                                    </li>
+                                    <li>
+                                        Mathe ist für dich kein Fremdwort
+                                    </li>
+                                    <li>
+                                        Du arbeitest gern im Team
+                                    </li>
+                                    <li>
+                                        Egal ob Hauptschule, Realschule oder Abi - bei uns zählt, dass du motiviert
+                                        bist!
+                                    </li>
+                                </ul>
+                                <h4 class="text-h3">
+                                    So läuft deine Ausbildung
+                                </h4>
+                                <ul class="list_dash">
+                                    <li>
+                                        Dauer: 3,5 Jahre (kann verkürzt werden)
+                                    </li>
+                                    <li>
+                                        Mix aus Betrieb, Berufsschule & Werkstatt-Training
+                                    </li>
+                                    <li>
+                                        Du arbeitest im Kundendienst, auf Baustellen, in der Werkstatt oder auch im Büro
+                                        bei der Planung
+                                    </li>
+                                    <li>
+                                        Du kannst dich später spezialisieren: z. B. auf Sanitär, Heizung, Klima oder
+                                        erneuerbare Energien
+                                    </li>
+                                    <li>
+                                        Familiäres Team, viel Abwechslung und echtes Handwerk mit Zukunft
+                                    </li>
+                                </ul>
+                                <h4 class="text-h3">
+                                    Und danach? Geht's richtig los!
+                                </h4>
+                                <ul class="list_dash">
+                                    <li>
+                                        Gute Bezahlung
+                                    </li>
+                                    <li>
+                                        Aufstieg zum/zur Techniker/in, Meister/in, Bachelor oder sogar Master
+                                    </li>
+                                    <li>
+                                        Oder: Mach dich selbstständig und starte dein eigenes Business im SHK-Handwerk
+                                    </li>
+                                </ul>
+                            </div>
+                            <button @click="open = !open" class="border-b">
+                                <span x-show="!open">Mehr erfahren &gt;&gt;</span>
+                                <span x-show="open">&lt;&lt; Weniger anzeigen</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="space-y-40 xl:space-y-80">
+                        <div>
+                            <h3 class="text-h3 font-semibold mb-14 xl:mb-26">
+                                ✅ Vorteile der Ausbildung <br>
+                                zum/zur Anlagenmechaniker/in SHK
+                            </h3>
+                            <div x-data="{open:false}">
+                                <div class="text">
+                                    <ul class="list_dash">
+                                        <li>
+                                            Abwechslungsreicher Arbeitsalltag - Kein Tag ist wie der andere
+                                        </li>
+                                        <li>
+                                            Sinnvolle Tätigkeit - Du arbeitest für Klimaschutz, Energieeffizienz &
+                                            Trinkwasserhygiene
+                                        </li>
+                                        <li>
+                                            Moderne Technik - Einsatz von Smart Home, Solarthermie, Wärmepumpen u. v. m.
+
+                                        </li>
+                                        <li>
+                                            Schnelle Erfolgserlebnisse - Du siehst direkt, was du geschafft hast
+                                        </li>
+                                        <li>
+                                            Gute Bezahlung schon in der Ausbildung
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="text max-h-0 overflow-hidden transition-all duration-300" x-ref="ex_content"
+                                    x-bind:style="open ? 'max-height: ' + $refs.ex_content.scrollHeight + 'px' : ''">
+                                    <ul class="list_dash">
+                                        <li>
+                                            Teamarbeit & Kundenkontakt - Technik trifft auf Kommunikation
+                                        </li>
+                                        <li>
+                                            Kombination aus Handwerk, Technik & Planung
+                                        </li>
+                                        <li>
+                                            Krisensicherer Beruf - SHK wird immer gebraucht
+                                        </li>
+                                        <li>
+                                            Regionale Jobmöglichkeiten - Arbeiten in der Heimat, ohne pendeln zu müssen
+                                        </li>
+                                        <li>
+                                            Praktisches Arbeiten mit Verantwortung
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button @click="open = !open" class="border-b">
+                                    <span x-show="!open">Mehr erfahren &gt;&gt;</span>
+                                    <span x-show="open">&lt;&lt; Weniger anzeigen</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-h3 font-semibold mb-14 xl:mb-26">
+                                🚀 Zukunftschancen & Karrierewege
+                            </h3>
+                            <div x-data="{open:false}">
+                                <div class="text">
+                                    <ul class="list_dash">
+                                        <li>
+                                            Fachkräftemangel = hohe Nachfrage nach gut ausgebildeten SHK-Monteuren
+                                        </li>
+                                        <li>
+                                            Vielfältige Spezialisierungen:
+                                        </li>
+                                        <li>
+                                            Heizungstechnik
+                                        </li>
+                                        <li>
+                                            Sanitärtechnik
+                                        </li>
+                                        <li>
+                                            Klimatechnik / Lüftung
+                                        </li>
+                                        <li>
+                                            Erneuerbare Energien & Umwelttechnik
+                                        </li>
+                                        <li>
+                                            Gute Verdienstmöglichkeiten mit Berufserfahrung
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="text max-h-0 overflow-hidden transition-all duration-300" x-ref="ex_content"
+                                    x-bind:style="open ? 'max-height: ' + $refs.ex_content.scrollHeight + 'px' : ''">
+                                    <ul class="list_dash">
+                                        <li>
+                                            Aufstiegsmöglichkeiten:
+                                        </li>
+                                        <li>
+                                            Techniker/in
+                                        </li>
+                                        <li>
+                                            Meister/in
+                                        </li>
+                                        <li>
+                                            Studium (Bachelor/Master z. B. Versorgungstechnik, Energie- &
+                                            Gebäudetechnik)
+                                        </li>
+                                        <li>
+                                            Selbstständigkeit - Eigener Betrieb möglich nach der Meisterprüfung
+                                        </li>
+                                        <li>
+                                            Weiterbildung im Bereich Digitalisierung & Gebäudetechnik
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button @click="open = !open" class="border-b">
+                                    <span x-show="!open">Mehr erfahren &gt;&gt;</span>
+                                    <span x-show="open">&lt;&lt; Weniger anzeigen</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white text-blue p-25 xl:p-50">
+                    <div class="grid lg:grid-cols-2 gap-y-20 gap-40 xl:gap-80 items-center">
+                        <h3 class="text-h3 font-semibold">
+                            Neugierig? Starte mit einem Praktikum
+                            oder bewirb dich direkt für deine Ausbildung!
+                        </h3>
+                        <a class="text-h2" href="mailto:info@clemens-sanitaer.de">👉 info@clemens-sanitaer.de</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section last -->
+        <section class="py-spc">
+            <div class="container">
+                <h2 class="text-h1 font-semibold uppercase mb-30 xl:mb-74">
+                    Unsere Leistungen im Überblick
+                </h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-15 xl:gap-30 2xl:gap-60 text-white">
+                    <div
+                        class="hover:scale-105 transition-all duration-300 gdnt_red aspect-square flex flex-col justify-center items-center gap-10 xl:gap-20 p-20 xl:p-40">
+                        <img src="assets/images/fire.svg" alt="">
+                        <h3 class="text-h2 uppercase font-semibold">
+                            Heizung
+                        </h3>
+                    </div>
+                    <div
+                        class="hover:scale-105 transition-all duration-300 gdnt_blue aspect-square flex flex-col justify-center items-center gap-10 xl:gap-20 p-20 xl:p-40">
+                        <img src="assets/images/water.svg" alt="">
+                        <h3 class="text-h2 uppercase font-semibold">
+                            Sanitär
+                        </h3>
+                    </div>
+                    <div
+                        class="hover:scale-105 transition-all duration-300 gdnt_yellow aspect-square flex flex-col justify-center items-center gap-10 xl:gap-20 p-20 xl:p-40">
+                        <img src="assets/images/snow.svg" alt="">
+                        <h3 class="text-h2 uppercase font-semibold">
+                            Klima
+                        </h3>
+                    </div>
+                    <div
+                        class="hover:scale-105 transition-all duration-300 gdnt_slate aspect-square flex flex-col justify-center items-center gap-10 xl:gap-20 p-20 xl:p-40">
+                        <img src="assets/images/thunder.svg" alt="">
+                        <h3 class="text-h2 uppercase font-semibold">
+                            Elektro
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="gdnt_blue py-40 text-white">
+        <div class="container">
+            <div
+                class="grid sm:grid-cols-2 lg:grid-cols-3 2xl:flex flex-wrap gap-30 sm:gap-50 justify-between items-end">
+                <div>
+                    <p class="font-semibold">
+                        Heizung - Sanitär - Klima <br>
+                        Mike Clemens <br>
+                        In der Trift 11A | 57489 Drolshagen
+                    </p>
+                </div>
+                <div>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="Tel+492761834147">Tel.: +49 (0) 27 61 / 83 41 47 </a>
+                            </li>
+                            <li>
+                                <a href="tel:+492761834139">Fax.: +49 (0) 27 61 / 83 41 39</a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@clemens-sanitaer.de">info@clemens-sanitaer.de</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <a href="javascript:;">
+                        <img src="assets/images/footer-logo1.png" alt="SHK-Innung Kreis Olpe logo">
+                    </a>
+                </div>
+                <div>
+                    <a href="javascript:;">
+                        <img src="assets/images/footer-logo2.png" alt="DAS HANDWERK logo">
+                    </a>
+                </div>
+                <div class="flex flex-col 2xl:items-end gap-8 2xl:text-end">
+                    <a href="https://www.instagram.com" class="block" target="_blank">
+                        <img src="assets/images/insta.svg" alt="Instagram-Konto">
+                    </a>
+                    <nav>
+                        <ul class="legal_menu">
+                            <li>
+                                <a href="impressum.html">
+                                    Impressum
+                                </a>
+                            </li>
+                            <li>
+                                <a href="datenschutz.html">
+                                    Datenschutz
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p>
+                        © `25 | MDK MEDIADESIGN ■
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Sticky numbers -->
+    <div class="md:hidden sticky bottom-0 z-20 flex justify-center gdnt_red text-white gap-12 xl:gap-24 py-8 px-10">
+        <img src="assets/images/fire.svg" alt="" class="w-45">
+        <div class="flex flex-wrap items-center gap-x-12">
+            <span class="text-h5 font-bold uppercase">24 Std.-Heizungsnotdienst</span>
+            <div class="flex gap-x-12 flex-wrap">
+                <a class="text-base" href="tel:+492761834147">Tel: 0 27 61 / 83 41 47</a>
+                <a class="text-base" href="tel:+491775625368">Mobil: 01 77 / 5 62 53 68</a>
+            </div>
+        </div>
+    </div>
+    <!-- Sticky numbers -->
+
+    <!-- Back to top -->
+    <button x-data="backToTop()" x-show="visible" x-transition.opacity.duration.200 @click="scrollToTop"
+        class="fixed bottom-75 md:bottom-15 right-15 gdnt_red p-10 text-white z-30 border" aria-label="Zurück nach oben"
+        title="Zurück nach oben">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M6 15l6 -6l6 6"></path>
+        </svg>
+    </button>
+    <!-- Back to top -->
+
+    <!-- swiper js -->
+    <script src="assets/js/swiper.js"></script>
+    <!-- custom js -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

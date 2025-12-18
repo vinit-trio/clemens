@@ -5,8 +5,9 @@ var swiper = new Swiper(".home_hero_swiper", {
     spaceBetween: 0,
     centeredSlides: true,
     effect: "fade",
+    speed: 1000,
     autoplay: {
-        delay: 2500,
+        delay: 5000,
         disableOnInteraction: false,
     },
     pagination: {
@@ -21,8 +22,9 @@ var swiper = new Swiper(".home_hero_swiper", {
 var swiper = new Swiper(".testimonial_swiper", {
     spaceBetween: 0,
     centeredSlides: true,
+    speed: 1000,
     autoplay: {
-        delay: 2500,
+        delay: 5000,
         disableOnInteraction: false,
     },
     pagination: {
@@ -53,3 +55,35 @@ function backToTop() {
         }
     };
 }
+
+// ------------------------------------------------------------------
+// Counter
+// ------------------------------------------------------------------
+
+document.addEventListener('alpine:init', () => {
+    Alpine.data('counters', () => ({
+        started: false,
+        duration: 5000,
+        frameTime: 20,
+        start() {
+            if (this.started) return;
+            this.started = true;
+            document.querySelectorAll('.counting').forEach(el => {
+                const target = +el.textContent;
+                el.textContent = '0';
+                let count = 0;
+                const steps = this.duration / this.frameTime;
+                const increment = target / steps;
+                const interval = setInterval(() => {
+                    count += increment;
+                    if (count >= target) {
+                        el.textContent = target;
+                        clearInterval(interval);
+                    } else {
+                        el.textContent = Math.round(count);
+                    }
+                }, this.frameTime);
+            });
+        }
+    }));
+});
