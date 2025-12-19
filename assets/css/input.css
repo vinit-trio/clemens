@@ -216,12 +216,70 @@
     @apply !hidden
   }
 
-  .pagination .active{
+  .pagination .active {
     @apply underline
   }
 
-  .pagination{
+  .pagination {
     @apply flex items-center justify-center gap-12
+  }
+
+  .google_map a {
+    @apply underline
+  }
+
+  #map_iframe,
+  #map_iframe p,
+  #map_iframe iframe {
+    @apply size-full
+  }
+
+  .gutenburg-title {
+    @apply pt-spc
+  }
+
+  .gutenburg-content {
+    @apply pb-spc
+  }
+
+  .gutenburg-content {
+    @apply font-light
+  }
+
+  .gutenburg-content p {
+    @apply mb-8 xl:mb-16
+  }
+
+  .gutenburg-title h1 {
+    @apply text-h1 font-medium mb-30
+  }
+
+  .gutenburg-content h2 {
+    @apply text-[26px] pt-10
+  }
+
+  .gutenburg-content h3 {
+    @apply text-[24px] pt-10
+  }
+
+  .gutenburg-content h4 {
+    @apply text-[22px] pt-10
+  }
+
+  .gutenburg-content h5 {
+    @apply text-[20px] pt-10
+  }
+
+  .gutenburg-content h6 {
+    @apply text-[18px] pt-10
+  }
+
+  .gutenburg-content a {
+    @apply underline
+  }
+
+  .gutenburg-content ul {
+    @apply list-disc pl-21 mb-16
   }
 }
 
@@ -290,5 +348,23 @@
 @media (min-width:768px) {
   .services_card {
     --i: 4;
+  }
+}
+
+.contact_form {
+  --g: clamp(1.25rem, 0rem + 6.25vw, 7.5rem);
+  --i: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1.25rem, 0.9375rem + 1.5625vw, 2.8125rem) var(--g);
+}
+
+.contact_form>* {
+  width: calc((100% - var(--g) * (var(--i) - 1)) / var(--i));
+}
+
+@media (min-width:576px) {
+  .contact_form {
+    --i: 2;
   }
 }

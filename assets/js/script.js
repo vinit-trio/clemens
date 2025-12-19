@@ -179,3 +179,16 @@ document.addEventListener('alpine:init', () => {
         console.log('Alpine Lightbox not found in this page', e);
     }
 });
+
+// ------------------------------------------------------------------
+// Load google map
+// ------------------------------------------------------------------
+
+if (document.getElementById('loadMapBtn')) {
+    
+    document.getElementById('loadMapBtn').addEventListener('click',function() {
+        document.getElementById('map_content').style.display = 'none';
+        document.getElementById('map_iframe').style.display = 'block';
+    })
+    
+}
