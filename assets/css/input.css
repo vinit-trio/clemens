@@ -116,24 +116,35 @@
     @apply cursor-pointer select-none
   }
 
-  .gdnt_red {
+  .gdnt_red,
+  .btn_red {
     background: #B51200;
     background: linear-gradient(0deg, rgba(181, 18, 0, 1) 0%, rgba(255, 45, 22, 1) 50%);
   }
 
-  .gdnt_blue {
+  .gdnt_blue,
+  .btn_blue {
     background: #013A65;
     background: linear-gradient(0deg, rgba(1, 58, 101, 1) 0%, rgba(2, 107, 187, 1) 50%);
   }
 
-  .gdnt_yellow {
+  .gdnt_yellow,
+  .btn_yellow {
     background: #D3A426;
     background: linear-gradient(0deg, rgba(211, 164, 38, 1) 0%, rgba(255, 199, 51, 1) 50%);
   }
 
-  .gdnt_slate {
+  .gdnt_slate,
+  .btn_slate {
     background: #505050;
     background: linear-gradient(0deg, rgba(80, 80, 80, 1) 0%, rgba(142, 142, 142, 1) 50%);
+  }
+
+  .btn_red,
+  .btn_blue,
+  .btn_yellow,
+  .btn_slate {
+    @apply transition-all duration-300 text-white py-8 px-16 text-h3 font-semibold uppercase -outline-offset-4 outline outline-transparent hover:outline-white w-fit;
   }
 
   .primary_menu {
