@@ -87,3 +87,95 @@ document.addEventListener('alpine:init', () => {
         }
     }));
 });
+
+// ------------------------------------------------------------------
+// Auto link activation
+// ------------------------------------------------------------------
+
+const sections = document.querySelectorAll('section[id]');
+const links = document.querySelectorAll('a[href*="#"]');
+
+const observer = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                links.forEach(link => {
+                    link.classList.toggle(
+                        'active',
+                        link.getAttribute('href').endsWith(`#${entry.target.id}`)
+                    );
+                });
+            }
+        });
+    },
+    {
+        threshold: 0.6
+    }
+);
+
+sections.forEach(section => observer.observe(section));
+
+// ------------------------------------------------------------------
+// Lightbox image gallery
+// ------------------------------------------------------------------
+
+document.addEventListener('alpine:init', () => {
+    try {
+        Alpine.data('lightbox', () => ({
+            images: [],
+            current: null,
+            zoomed: false,
+
+            init() {
+                if (!this.$refs.gallery) {
+                    console.log('Lightbox: gallery ref not found');
+                    return;
+                }
+
+                this.images = [...this.$refs.gallery.querySelectorAll('img')]
+                    .map(img => img.src)
+                    .filter(Boolean);
+
+                if (!this.images.length) {
+                    console.log('Lightbox: no images found');
+                }
+            },
+
+            open(i = 0) {
+                if (!this.images.length) return;
+
+                this.current = i;
+                this.zoomed = false;
+                document.body.classList.add('overflow-hidden');
+            },
+
+            close() {
+                this.current = null;
+                this.zoomed = false;
+                document.body.classList.remove('overflow-hidden');
+            },
+
+            next() {
+                if (this.current === null || !this.images.length) return;
+
+                this.current = (this.current + 1) % this.images.length;
+                this.zoomed = false;
+            },
+
+            prev() {
+                if (this.current === null || !this.images.length) return;
+
+                this.current =
+                    (this.current - 1 + this.images.length) % this.images.length;
+                this.zoomed = false;
+            },
+
+            toggleZoom() {
+                if (this.current === null) return;
+                this.zoomed = !this.zoomed;
+            }
+        }));
+    } catch (e) {
+        console.log('Alpine Lightbox not found in this page', e);
+    }
+});

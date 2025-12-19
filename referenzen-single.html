@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Komplettlösungen für Heizung, Sanitär, Klima und Elektro">
+
+    <title>Clemens | Referenzen</title>
+
+    <!-- Favicons -->
+    <link rel="icon" href="assets/images/favicon-light.png" type="image/png">
+    <link rel="icon" href="assets/images/favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+    <link rel="apple-touch-icon" href="assets/images/favicon-light.png" sizes="180x180"
+        media="(prefers-color-scheme: light)">
+    <link rel="apple-touch-icon" href="assets/images/favicon-dark.png" sizes="180x180"
+        media="(prefers-color-scheme: dark)">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Alpine -->
+    <script src="assets/js/alpine.js" defer></script>
+
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div x-data="{ show: true }" x-init="setTimeout(() =&gt; show = false)" x-show="show"
+        x-transition.opacity.duration.1000ms="" class="fixed inset-0 bg-white z-999999"></div>
+    <!-- loader -->
+
+    <!-- Header -->
+    <header class="py-13 xl:py-26 h-100 md:h-125 xl:h-150 flex items-center sticky top-0 z-20 bg-white/90"
+        x-data="{ open: false }" @keydown.window.escape="open = false"
+        @click="if ($event.target.tagName === 'A') open = false">
+        <div class="container">
+            <div class="flex items-center justify-between">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="Mike Clemens" class="w-150 md:w-215">
+                </a>
+                <div class="flex items-center gap-30 lg:gap-65">
+                    <div class="hidden md:flex gdnt_red text-white gap-12 xl:gap-24 py-8 px-15">
+                        <img src="assets/images/fire.svg" alt="" class="w-45">
+                        <div class="flex flex-col">
+                            <span class="text-h5 font-bold uppercase">24 Std.-Heizungsnotdienst</span>
+                            <a class="text-base" href="tel:+492761834147">Tel: 0 27 61 / 83 41 47</a>
+                            <a class="text-base" href="tel:+491775625368">Mobil: 01 77 / 5 62 53 68</a>
+                        </div>
+                    </div>
+                    <button @click="open = !open" class="relative size-50 xl:size-80" aria-label="Hauptmenü-Umschalter">
+                        <img src="assets/images/menu.svg" alt="" class="absolute inset-0 transition-all duration-300"
+                            :class="open ? 'opacity-0 -rotate-180' : ''">
+                        <img src="assets/images/close.svg" alt="" class="absolute inset-0 transition-all duration-300"
+                            :class="open ? '' : 'opacity-0 rotate-180'">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Panel -->
+        <div x-show="open" x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300"
+            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+            class="fixed inset-0 bg-blue/90 text-white z-20 p-6 top-100 md:top-125 xl:top-150">
+            <div class="h-full overflow-y-auto">
+                <div class="container py-44 lg:py-88">
+                    <nav>
+                        <ul class="primary_menu">
+                            <li>
+                                <a href="index.html" class="active">
+                                    Startseite
+                                </a>
+                            </li>
+                            <li>
+                                <a href="unternehmen.html">
+                                    Unternehmen
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="unternehmen.html#unser-team">Unser Team </a>
+                                    </li>
+                                    <li>
+                                        <a href="unternehmen.html#werte&motivation">Werte & Motivation </a>
+                                    </li>
+                                    <li>
+                                        <a href="unternehmen.html#zertifikate&partner">Zertifikate & Partner</a>
+                                    </li>
+                                    <li>
+                                        <a href="unternehmen.html#karriere">Karriere</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="leistungen.html">
+                                    Leistungen
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="leistungen.html#heizung">Heizung</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#sanitär">Sanitär</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#klima">Klima</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#elektro">Elektro</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="leistungen.html">
+                                    Service
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="leistungen.html#heizung">Heizung</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#sanitär">Sanitär</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#klima">Klima</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#elektro">Elektro</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="referenzen.html">
+                                    Referenzen
+                                </a>
+                            </li>
+                            <li>
+                                <a href="kontakt.html">
+                                    Kontakt
+                                </a>
+                            </li>
+                            <li>
+                                <a href="aktuelles.html">
+                                    Aktuelles
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header -->
+
+    <main>
+
+        <section id="unser-team" class="border-t-5 border-blue py-spc">
+            <div class="container">
+                <div class="grid lg:grid-cols-2 gap-22 xl:gap-45">
+                    <div>
+                        <div class="images sticky top-150">
+                            <img src="assets/images/stylish-room.webp" alt="moderne Haustechnik - persönlich &amp; nah">
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h2 class="text-h1 uppercase font-semibold mb-14 xl:mb-28">
+                            Einbau Wärmepumpe <br>
+                            für Mehrfamilienhaus
+                        </h2>
+                        <div class="text mb-20 xl:mb-40">
+                            <p>
+                                In diesem Projekt durften wir ein in die Jahre gekommenes Mehrfamilienhaus auf den
+                                neuesten Stand der Technik bringen. Die alte Gasheizung wurde durch eine moderne
+                                Luft-Wasser-Wärmepumpe ersetzt - effizient, leise und umweltfreundlich.
+                                Dank intelligenter Regelung und einem passenden Pufferspeicher sorgt die neue Anlage nun
+                                zuverlässig für wohlige Wärme und warmes Wasser - und das bei deutlich geringeren
+                                Betriebskosten. <br>
+                                Ein weiterer Vorteil: Die Bewohner profitieren nicht nur von mehr Komfort, sondern auch
+                                von einer zukunftssicheren, förderfähigen Heizlösung, die langfristig den Wert der
+                                Immobilie steigert.
+                            </p>
+                        </div>
+                        <h3>
+                            Serviceleistunge
+                        </h3>
+                        <ul class="cstm_list text-h4 space-y-6 blue" style="--list-image: url(../images/tick.svg)">
+                            <li>
+                                Individuelle Beratung und Planung
+                            </li>
+                            <li>
+                                Unterstützung bei Förderanträgen
+                            </li>
+                            <li>
+                                Lieferung und fachgerechte Montage
+                            </li>
+                            <li>
+                                Einbindung in die Haustechnik
+                            </li>
+                            <li>
+                                Inbetriebnahme und Einweisung
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-spc" x-data="lightbox()">
+            <div class="container">
+                <div class="gallery grid sm:grid-cols-3 gap-15 lg:gap-30 3xl:gap-55 mb-60 xl:mb-126" x-ref="gallery">
+                    <div class="cursor-pointer img aspect-video sm:aspect-[1.48/1] relative" @click="open(0)">
+                        <img src="assets/images/lightbox-gallery1.webp" class="absolute inset-0 size-full object-cover"
+                            alt="Lightbox gallery">
+                    </div>
+                    <div class="cursor-pointer img aspect-video sm:aspect-[1.48/1] relative" @click="open(1)">
+                        <img src="assets/images/lightbox-gallery2.webp" class="absolute inset-0 size-full object-cover"
+                            alt="Lightbox gallery">
+                    </div>
+                    <div class="cursor-pointer img aspect-video sm:aspect-[1.48/1] relative" @click="open(2)">
+                        <img src="assets/images/lightbox-gallery3.webp" class="absolute inset-0 size-full object-cover"
+                            alt="Lightbox gallery">
+                    </div>
+                    <div class="cursor-pointer img aspect-video sm:aspect-[1.48/1] relative" @click="open(3)">
+                        <img src="assets/images/lightbox-gallery4.webp" class="absolute inset-0 size-full object-cover"
+                            alt="Lightbox gallery">
+                    </div>
+                    <div class="cursor-pointer img aspect-video sm:aspect-[1.48/1] relative" @click="open(4)">
+                        <img src="assets/images/lightbox-gallery5.webp" class="absolute inset-0 size-full object-cover"
+                            alt="Lightbox gallery">
+                    </div>
+                    <div class="cursor-pointer img aspect-video sm:aspect-[1.48/1] relative" @click="open(5)">
+                        <img src="assets/images/lightbox-gallery6.webp" class="absolute inset-0 size-full object-cover"
+                            alt="Lightbox gallery">
+                    </div>
+                    <div class="cursor-pointer img aspect-video sm:aspect-[1.48/1] relative" @click="open(6)">
+                        <img src="assets/images/lightbox-gallery7.webp" class="absolute inset-0 size-full object-cover"
+                            alt="Lightbox gallery">
+                    </div>
+                    <div class="cursor-pointer img aspect-video sm:aspect-[1.48/1] relative" @click="open(7)">
+                        <img src="assets/images/lightbox-gallery8.webp" class="absolute inset-0 size-full object-cover"
+                            alt="Lightbox gallery">
+                    </div>
+                    <div class="cursor-pointer img aspect-video sm:aspect-[1.48/1] relative" @click="open(8)">
+                        <img src="assets/images/lightbox-gallery9.webp" class="absolute inset-0 size-full object-cover"
+                            alt="Lightbox gallery">
+                    </div>
+                </div>
+                <a href="#"
+                    class="gdnt_blue hover:shadow-[8px_8px_0_0_#026BBA] transition-all duration-300 text-white py-8 px-16 text-h3 font-semibold uppercase block mx-auto w-fit">
+                    Jetzt Kontaktieren
+                </a>
+            </div>
+            <div x-show="current !== null" x-transition
+                class="fixed inset-0 bg-black/80 flex items-center justify-center z-999999">
+
+                <img :src="images[current]" @click="toggleZoom()"
+                    :class="zoomed ? 'scale-150 cursor-zoom-out' : 'scale-100 cursor-zoom-in'"
+                    class="max-w-[90%] max-h-[85%] rounded shadow-lg">
+
+                <button @click="prev"
+                    class="absolute top-0 bottom-0 left-0 p-30 text-white flex justify-start items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="bg-black/50 p-10 icon-tabler-chevron-left">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M15 6l-6 6l6 6" />
+                    </svg>
+                </button>
+                <button @click="next"
+                    class="absolute top-0 bottom-0 right-0 p-30 text-white flex justify-end items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="bg-black/50 p-10 icon-tabler-chevron-right">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M9 6l6 6l-6 6" />
+                    </svg>
+                </button>
+                <button @click="close" class="absolute p-24 top-0 right-0 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="bg-black/50 p-10 icon-tabler-x">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M18 6l-12 12" />
+                        <path d="M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="gdnt_blue py-40 text-white">
+        <div class="container">
+            <div
+                class="grid sm:grid-cols-2 lg:grid-cols-3 2xl:flex flex-wrap gap-30 sm:gap-50 justify-between items-end">
+                <div>
+                    <p class="font-semibold">
+                        Heizung - Sanitär - Klima <br>
+                        Mike Clemens <br>
+                        In der Trift 11A | 57489 Drolshagen
+                    </p>
+                </div>
+                <div>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="Tel+492761834147">Tel.: +49 (0) 27 61 / 83 41 47 </a>
+                            </li>
+                            <li>
+                                <a href="tel:+492761834139">Fax.: +49 (0) 27 61 / 83 41 39</a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@clemens-sanitaer.de">info@clemens-sanitaer.de</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="assets/images/footer-logo1.png" alt="SHK-Innung Kreis Olpe logo">
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="assets/images/footer-logo2.png" alt="DAS HANDWERK logo">
+                    </a>
+                </div>
+                <div class="flex flex-col 2xl:items-end gap-8 2xl:text-end">
+                    <a href="https://www.instagram.com" class="block" target="_blank">
+                        <img src="assets/images/insta.svg" alt="Instagram-Konto">
+                    </a>
+                    <nav>
+                        <ul class="legal_menu">
+                            <li>
+                                <a href="impressum.html">
+                                    Impressum
+                                </a>
+                            </li>
+                            <li>
+                                <a href="datenschutz.html">
+                                    Datenschutz
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p>
+                        © `25 | MDK MEDIADESIGN ■
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Sticky numbers -->
+    <div class="md:hidden sticky bottom-0 z-20 flex justify-center gdnt_red text-white gap-12 xl:gap-24 py-8 px-10">
+        <img src="assets/images/fire.svg" alt="" class="w-45">
+        <div class="flex flex-wrap items-center gap-x-12">
+            <span class="text-h5 font-bold uppercase">24 Std.-Heizungsnotdienst</span>
+            <div class="flex gap-x-12 flex-wrap">
+                <a class="text-base" href="tel:+492761834147">Tel: 0 27 61 / 83 41 47</a>
+                <a class="text-base" href="tel:+491775625368">Mobil: 01 77 / 5 62 53 68</a>
+            </div>
+        </div>
+    </div>
+    <!-- Sticky numbers -->
+
+    <!-- Back to top -->
+    <button x-data="backToTop()" x-show="visible" x-transition.opacity.duration.200 @click="scrollToTop"
+        class="fixed bottom-75 md:bottom-15 right-15 gdnt_red p-10 text-white z-30 border" aria-label="Zurück nach oben"
+        title="Zurück nach oben">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M6 15l6 -6l6 6"></path>
+        </svg>
+    </button>
+    <!-- Back to top -->
+
+    <!-- swiper js -->
+    <script src="assets/js/swiper.js"></script>
+    <!-- custom js -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

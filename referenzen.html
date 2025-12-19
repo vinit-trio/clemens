@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Komplettlösungen für Heizung, Sanitär, Klima und Elektro">
+
+    <title>Clemens | Referenzen</title>
+
+    <!-- Favicons -->
+    <link rel="icon" href="assets/images/favicon-light.png" type="image/png">
+    <link rel="icon" href="assets/images/favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+    <link rel="apple-touch-icon" href="assets/images/favicon-light.png" sizes="180x180"
+        media="(prefers-color-scheme: light)">
+    <link rel="apple-touch-icon" href="assets/images/favicon-dark.png" sizes="180x180"
+        media="(prefers-color-scheme: dark)">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Alpine -->
+    <script src="assets/js/alpine.js" defer></script>
+
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div x-data="{ show: true }" x-init="setTimeout(() =&gt; show = false)" x-show="show"
+        x-transition.opacity.duration.1000ms="" class="fixed inset-0 bg-white z-999999"></div>
+    <!-- loader -->
+
+    <!-- Header -->
+    <header class="py-13 xl:py-26 h-100 md:h-125 xl:h-150 flex items-center sticky top-0 z-20 bg-white/90"
+        x-data="{ open: false }" @keydown.window.escape="open = false"
+        @click="if ($event.target.tagName === 'A') open = false">
+        <div class="container">
+            <div class="flex items-center justify-between">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="Mike Clemens" class="w-150 md:w-215">
+                </a>
+                <div class="flex items-center gap-30 lg:gap-65">
+                    <div class="hidden md:flex gdnt_red text-white gap-12 xl:gap-24 py-8 px-15">
+                        <img src="assets/images/fire.svg" alt="" class="w-45">
+                        <div class="flex flex-col">
+                            <span class="text-h5 font-bold uppercase">24 Std.-Heizungsnotdienst</span>
+                            <a class="text-base" href="tel:+492761834147">Tel: 0 27 61 / 83 41 47</a>
+                            <a class="text-base" href="tel:+491775625368">Mobil: 01 77 / 5 62 53 68</a>
+                        </div>
+                    </div>
+                    <button @click="open = !open" class="relative size-50 xl:size-80" aria-label="Hauptmenü-Umschalter">
+                        <img src="assets/images/menu.svg" alt="" class="absolute inset-0 transition-all duration-300"
+                            :class="open ? 'opacity-0 -rotate-180' : ''">
+                        <img src="assets/images/close.svg" alt="" class="absolute inset-0 transition-all duration-300"
+                            :class="open ? '' : 'opacity-0 rotate-180'">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Panel -->
+        <div x-show="open" x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300"
+            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+            class="fixed inset-0 bg-blue/90 text-white z-20 p-6 top-100 md:top-125 xl:top-150">
+            <div class="h-full overflow-y-auto">
+                <div class="container py-44 lg:py-88">
+                    <nav>
+                        <ul class="primary_menu">
+                            <li>
+                                <a href="index.html" class="active">
+                                    Startseite
+                                </a>
+                            </li>
+                            <li>
+                                <a href="unternehmen.html">
+                                    Unternehmen
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="unternehmen.html#unser-team">Unser Team </a>
+                                    </li>
+                                    <li>
+                                        <a href="unternehmen.html#werte&motivation">Werte & Motivation </a>
+                                    </li>
+                                    <li>
+                                        <a href="unternehmen.html#zertifikate&partner">Zertifikate & Partner</a>
+                                    </li>
+                                    <li>
+                                        <a href="unternehmen.html#karriere">Karriere</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="leistungen.html">
+                                    Leistungen
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="leistungen.html#heizung">Heizung</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#sanitär">Sanitär</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#klima">Klima</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#elektro">Elektro</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="leistungen.html">
+                                    Service
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="leistungen.html#heizung">Heizung</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#sanitär">Sanitär</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#klima">Klima</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen.html#elektro">Elektro</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="referenzen.html">
+                                    Referenzen
+                                </a>
+                            </li>
+                            <li>
+                                <a href="kontakt.html">
+                                    Kontakt
+                                </a>
+                            </li>
+                            <li>
+                                <a href="aktuelles.html">
+                                    Aktuelles
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header -->
+
+    <main>
+
+        <!-- section 1 -->
+        <section
+            class="bg-blue relative z-1 overflow-hidden sm:min-h-[calc(100dvh-150px)] flex flex-col justify-end sm:pt-300 sm:pb-150">
+            <div class="container 4xl:max-w-full 4xl:pl-0!">
+                <div
+                    class="bg-blue sm:bg-blue/90 text-white py-16 xsm:py-40 sm:p-30 w-fit max-w-[83%] 4xl:pl-[calc((100%-1610px)/2)]!">
+                    <h1 class="text-h1 font-semibold uppercase">
+                        Von der Planung bis zur Umsetzung - <br>
+                        ein Blick in unsere Projekte
+                    </h1>
+                </div>
+            </div>
+            <div class="w-full not-sm:aspect-video sm:absolute inset-0 -z-1 -order-1">
+                <img src="assets/images/referenzen-hero.webp" class="size-full object-cover" fetchpriority="high"
+                    alt="Hero swiper image 1">
+            </div>
+        </section>
+
+        <!-- section 2 -->
+        <section id="unser-team" class="py-spc">
+            <div class="container">
+                <div class="grid lg:grid-cols-2 gap-22 xl:gap-45">
+                    <div class="images">
+                        <img src="assets/images/stylish-room.webp" alt="moderne Haustechnik - persönlich &amp; nah">
+                    </div>
+                    <div class="content">
+                        <h2 class="text-h1 uppercase font-semibold mb-14 xl:mb-28">
+                            Unsere Referenzen - <br>
+                            Qualität, die überzeugt
+                        </h2>
+                        <div class="text">
+                            <p>
+                                Ob Einfamilienhaus, Mehrfamilienhaus oder Gewerbeobjekt - unsere Projekte zeigen, wofür
+                                wir stehen: handwerkliche Präzision, moderne Technik und echte Verlässlichkeit.
+                                Von der energieeffizienten Wärmepumpe über durchdachte Badsanierungen bis hin zu
+                                kompletten Heizungsmodernisierungen - wir realisieren Lösungen, die perfekt zu den
+                                Anforderungen unserer Kunden passen. <br>
+                                Hier geben wir Ihnen einen Einblick in ausgewählte Projekte. Lassen Sie sich inspirieren
+                                von der Vielfalt unserer Arbeit und überzeugen Sie sich selbst von der Qualität, die wir
+                                täglich liefern.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 3 -->
+        <section class="gdnt_red py-35 text-white">
+            <div class="container">
+                <div class="flex gap-x-30 3xl:gap-x-140 gap-y-20 flex-wrap items-center uppercase">
+                    <h2 class="text-h2 font-semibold">
+                        Jetzt Beratungstermin vereinbaren:
+                    </h2>
+                    <div class="flex gap-x-30 3xl:gap-x-140 gap-y-10 text-center flex-wrap w-fit">
+                        <a href="tel:+492761834147"
+                            class="grow bg-white text-[#EB1700] shadow-[7px_7px_0_0_#DB1600] py-8 px-15 hover:bg-red hover:text-white transition-all duration-300 border">
+                            Tel: 0 27 61 / 83 41 47
+                        </a>
+                        <a href="kontakt.html"
+                            class="grow bg-white text-[#EB1700] shadow-[7px_7px_0_0_#DB1600] py-8 px-15 hover:bg-red hover:text-white transition-all duration-300 border flex items-center justify-center gap-12">
+                            <span>Kontakt</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                                <g id="Group_366" data-name="Group 366" transform="translate(-1611 -1756)">
+                                    <circle id="Ellipse_1" data-name="Ellipse 1" cx="15" cy="15" r="15"
+                                        transform="translate(1611 1756)" fill="#ff2d16" />
+                                    <path id="Polygon_1" data-name="Polygon 1" d="M9.5,0,19,12.26H0Z"
+                                        transform="translate(1633.76 1761.5) rotate(90)" fill="#fff" />
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 4 -->
+        <section class="py-spc">
+            <div class="container">
+                <div class="grid md:grid-cols-2 gap-16 lg:gap-30 3xl:gap-x-148 3xl:gap-y-50 mb-34 xl:mb-68">
+                    <div class="bg-[#B2B2B2]/30 flex flex-col">
+                        <a href="#" class="aspect-2/1 relative">
+                            <img src="assets/images/blog2.webp" class="absolute inset-0 size-full object-cover"
+                                alt="Blog image 1">
+                        </a>
+                        <div class="grow content flex flex-col px-22 py-36">
+                            <a href="#" class="text-h3 font-semibold uppercase mb-4 xl:mb-8">
+                                Smart Home Installation
+                            </a>
+                            <div class="text mb-17 xl:mb-34">
+                                <p>
+                                    Wir bieten Ihnen ab 2026 die neuste Smart Home Technik, die Ihren Alltag
+                                    komfortabler macht.
+                                </p>
+                            </div>
+                            <a href="#"
+                                class="mt-auto text-blue border border-blue py-8 px-16 text-h4 font-semibold uppercase block mx-auto w-fit hover:bg-blue hover:text-white transition-all duration-300 bg-white/50">
+                                Mehr erfahren >>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-[#B2B2B2]/30 flex flex-col">
+                        <a href="#" class="aspect-2/1 relative">
+                            <img src="assets/images/blog1.webp" class="absolute inset-0 size-full object-cover"
+                                alt="Blog image 2">
+                        </a>
+                        <div class="grow content flex flex-col px-22 py-36">
+                            <a href="#" class="text-h3 font-semibold uppercase mb-4 xl:mb-8">
+                                Angebote Bad Einrichtung
+                            </a>
+                            <div class="text mb-17 xl:mb-34">
+                                <p>
+                                    Entdecken Sie unsere attraktiven Angebote für moderne Badeinrichtungen - von der
+                                    stilvollen Armatur bis zur komplett ausgestatteten Wellness-
+                                </p>
+                            </div>
+                            <a href="#"
+                                class="mt-auto text-blue border border-blue py-8 px-16 text-h4 font-semibold uppercase block mx-auto w-fit hover:bg-blue hover:text-white transition-all duration-300 bg-white/50">
+                                Mehr erfahren >>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-[#B2B2B2]/30 flex flex-col">
+                        <a href="#" class="aspect-2/1 relative">
+                            <img src="assets/images/blog2.webp" class="absolute inset-0 size-full object-cover"
+                                alt="Blog image 1">
+                        </a>
+                        <div class="grow content flex flex-col px-22 py-36">
+                            <a href="#" class="text-h3 font-semibold uppercase mb-4 xl:mb-8">
+                                Smart Home Installation
+                            </a>
+                            <div class="text mb-17 xl:mb-34">
+                                <p>
+                                    Wir bieten Ihnen ab 2026 die neuste Smart Home Technik, die Ihren Alltag
+                                    komfortabler macht.
+                                </p>
+                            </div>
+                            <a href="#"
+                                class="mt-auto text-blue border border-blue py-8 px-16 text-h4 font-semibold uppercase block mx-auto w-fit hover:bg-blue hover:text-white transition-all duration-300 bg-white/50">
+                                Mehr erfahren >>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-[#B2B2B2]/30 flex flex-col">
+                        <a href="#" class="aspect-2/1 relative">
+                            <img src="assets/images/blog1.webp" class="absolute inset-0 size-full object-cover"
+                                alt="Blog image 2">
+                        </a>
+                        <div class="grow content flex flex-col px-22 py-36">
+                            <a href="#" class="text-h3 font-semibold uppercase mb-4 xl:mb-8">
+                                Angebote Bad Einrichtung
+                            </a>
+                            <div class="text mb-17 xl:mb-34">
+                                <p>
+                                    Entdecken Sie unsere attraktiven Angebote für moderne Badeinrichtungen - von der
+                                    stilvollen Armatur bis zur komplett ausgestatteten Wellness-
+                                </p>
+                            </div>
+                            <a href="#"
+                                class="mt-auto text-blue border border-blue py-8 px-16 text-h4 font-semibold uppercase block mx-auto w-fit hover:bg-blue hover:text-white transition-all duration-300 bg-white/50">
+                                Mehr erfahren >>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M15 6l-6 6l6 6" />
+                        </svg>
+                    </button>
+                    <span class="active">1</span>
+                    <span>2</span>
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M9 6l6 6l-6 6" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="gdnt_blue py-40 text-white">
+        <div class="container">
+            <div
+                class="grid sm:grid-cols-2 lg:grid-cols-3 2xl:flex flex-wrap gap-30 sm:gap-50 justify-between items-end">
+                <div>
+                    <p class="font-semibold">
+                        Heizung - Sanitär - Klima <br>
+                        Mike Clemens <br>
+                        In der Trift 11A | 57489 Drolshagen
+                    </p>
+                </div>
+                <div>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="Tel+492761834147">Tel.: +49 (0) 27 61 / 83 41 47 </a>
+                            </li>
+                            <li>
+                                <a href="tel:+492761834139">Fax.: +49 (0) 27 61 / 83 41 39</a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@clemens-sanitaer.de">info@clemens-sanitaer.de</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="assets/images/footer-logo1.png" alt="SHK-Innung Kreis Olpe logo">
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="assets/images/footer-logo2.png" alt="DAS HANDWERK logo">
+                    </a>
+                </div>
+                <div class="flex flex-col 2xl:items-end gap-8 2xl:text-end">
+                    <a href="https://www.instagram.com" class="block" target="_blank">
+                        <img src="assets/images/insta.svg" alt="Instagram-Konto">
+                    </a>
+                    <nav>
+                        <ul class="legal_menu">
+                            <li>
+                                <a href="impressum.html">
+                                    Impressum
+                                </a>
+                            </li>
+                            <li>
+                                <a href="datenschutz.html">
+                                    Datenschutz
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p>
+                        © `25 | MDK MEDIADESIGN ■
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Sticky numbers -->
+    <div class="md:hidden sticky bottom-0 z-20 flex justify-center gdnt_red text-white gap-12 xl:gap-24 py-8 px-10">
+        <img src="assets/images/fire.svg" alt="" class="w-45">
+        <div class="flex flex-wrap items-center gap-x-12">
+            <span class="text-h5 font-bold uppercase">24 Std.-Heizungsnotdienst</span>
+            <div class="flex gap-x-12 flex-wrap">
+                <a class="text-base" href="tel:+492761834147">Tel: 0 27 61 / 83 41 47</a>
+                <a class="text-base" href="tel:+491775625368">Mobil: 01 77 / 5 62 53 68</a>
+            </div>
+        </div>
+    </div>
+    <!-- Sticky numbers -->
+
+    <!-- Back to top -->
+    <button x-data="backToTop()" x-show="visible" x-transition.opacity.duration.200 @click="scrollToTop"
+        class="fixed bottom-75 md:bottom-15 right-15 gdnt_red p-10 text-white z-30 border" aria-label="Zurück nach oben"
+        title="Zurück nach oben">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M6 15l6 -6l6 6"></path>
+        </svg>
+    </button>
+    <!-- Back to top -->
+
+    <!-- swiper js -->
+    <script src="assets/js/swiper.js"></script>
+    <!-- custom js -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

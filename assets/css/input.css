@@ -192,6 +192,37 @@
   .list_dash li::before {
     @apply content-['-'] inline-block mr-5
   }
+
+  .red_icons {
+    @apply text-red
+  }
+
+  .blue_icons {
+    @apply text-blue
+  }
+
+  .yellow_icons {
+    @apply text-yellow
+  }
+
+  .slate_icons {
+    @apply text-slate
+  }
+
+  [current-service="fire"] .fire,
+  [current-service="water"] .water,
+  [current-service="snow"] .snow,
+  [current-service="thunder"] .thunder {
+    @apply !hidden
+  }
+
+  .pagination .active{
+    @apply underline
+  }
+
+  .pagination{
+    @apply flex items-center justify-center gap-12
+  }
 }
 
 .swiper-pagination-bullet {
@@ -225,4 +256,39 @@
 .testimonial_swiper .swiper-pagination-bullet-active {
   background: #013A65;
   background: linear-gradient(0deg, rgba(1, 58, 101, 1) 0%, rgba(2, 107, 187, 1) 50%);
+}
+
+.cstm_list.red li::before {
+  filter: brightness(0) saturate(100%) invert(26%) sepia(54%) saturate(3794%) hue-rotate(350deg) brightness(99%) contrast(106%);
+}
+
+.cstm_list.blue li::before {
+  filter: brightness(0) saturate(100%) invert(22%) sepia(97%) saturate(2077%) hue-rotate(190deg) brightness(98%) contrast(98%);
+}
+
+.cstm_list.yellow li::before {
+  filter: brightness(0) saturate(100%) invert(88%) sepia(24%) saturate(1507%) hue-rotate(333deg) brightness(101%) contrast(101%);
+}
+
+.cstm_list.slate li::before {
+  filter: brightness(0) saturate(100%) invert(77%) sepia(0%) saturate(1129%) hue-rotate(144deg) brightness(73%) contrast(95%);
+}
+
+.services_card {
+  --g: clamp(0.625rem, 0rem + 3.125vw, 3.75rem);
+  --i: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--g);
+  justify-content: center;
+}
+
+.services_card>* {
+  width: calc((100% - var(--g) * (var(--i) - 1)) / var(--i));
+}
+
+@media (min-width:768px) {
+  .services_card {
+    --i: 4;
+  }
 }
