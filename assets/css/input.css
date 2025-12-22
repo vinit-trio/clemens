@@ -119,25 +119,25 @@
   .gdnt_red,
   .btn_red {
     background: #B51200;
-    background: linear-gradient(0deg, rgba(181, 18, 0, 1) 0%, rgba(255, 45, 22, 1) 50%);
+    background: linear-gradient(0deg, #b51200 0%, #ff2d16 50%);
   }
 
   .gdnt_blue,
   .btn_blue {
     background: #013A65;
-    background: linear-gradient(0deg, rgba(1, 58, 101, 1) 0%, rgba(2, 107, 187, 1) 50%);
+    background: linear-gradient(0deg, #013a65 0%, #026bbb 50%);
   }
 
   .gdnt_yellow,
   .btn_yellow {
     background: #D3A426;
-    background: linear-gradient(0deg, rgba(211, 164, 38, 1) 0%, rgba(255, 199, 51, 1) 50%);
+    background: linear-gradient(0deg, #d3a426 0%, #ffc733 50%);
   }
 
   .gdnt_slate,
   .btn_slate {
     background: #505050;
-    background: linear-gradient(0deg, rgba(80, 80, 80, 1) 0%, rgba(142, 142, 142, 1) 50%);
+    background: linear-gradient(0deg, #505050 0%, #8e8e8e 50%);
   }
 
   .btn_red,
@@ -156,7 +156,7 @@
   }
 
   .primary_menu ul li::before {
-    @apply content-['•'] text-sm align-middle inline-block -mt-4
+    @apply content-['•'] text-sm align-middle inline-block -mt-4 mr-4
   }
 
   .primary_menu a.active {
@@ -175,13 +175,16 @@
     @apply space-y-8 xl:space-y-16
   }
 
+  .referenzen-content li::before ,
   .cstm_list li::before {
-    @apply content-[''] size-20 bg-cover block shrink-0;
+    @apply content-[''] size-20 bg-cover block shrink-0 mt-8;
     background-image: var(--list-image);
+    background-image: url('../images/tick.svg');
   }
 
+  .referenzen-content li ,
   .cstm_list li {
-    @apply flex items-center gap-12
+    @apply flex gap-12
   }
 
   .testimonial_swiper .swiper-pagination {
@@ -200,8 +203,13 @@
     @apply content-['·']
   }
 
-  .list_dash li::before {
+  .list_dash li::before,
+  .ctm_text li::before {
     @apply content-['-'] inline-block mr-5
+  }
+
+  .ctm_text ul ul{
+    @apply pl-16
   }
 
   .red_icons {

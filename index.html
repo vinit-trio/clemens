@@ -29,8 +29,19 @@
 <body>
 
     <!-- loader -->
-    <div x-data="{ show: true }" x-init="setTimeout(() =&gt; show = false)" x-show="show"
-        x-transition.opacity.duration.1000ms="" class="fixed inset-0 bg-white z-999999"></div>
+    <div x-data="{
+    show: true,
+    hide() {
+      if (!this.show) return
+      this.show = false
+    }
+  }" x-init="
+    // Hide when page fully loads
+    window.addEventListener('load', () => hide())
+
+    // Force hide after max 2 seconds
+    setTimeout(() => hide(), 2000)
+  " x-show="show" x-transition.opacity.duration.500ms class="fixed inset-0 bg-white z-9999999"></div>
     <!-- loader -->
 
     <!-- Header -->
@@ -327,8 +338,7 @@
                         <span x-show="open">&lt;&lt; Weniger anzeigen</span>
                     </button>
                 </div>
-                <a href="index.html"
-                    class="btn_blue block mx-auto">
+                <a href="index.html" class="btn_blue block mx-auto">
                     Jetzt anfragen
                 </a>
             </div>
@@ -419,8 +429,7 @@
                 </div>
                 <div class="flex gap-40 xl:gap-80 items-center">
                     <div class="sm:w-1/2">
-                        <a href="index.html"
-                            class="btn_blue block mx-auto">
+                        <a href="index.html" class="btn_blue block mx-auto">
                             Unternehmen
                         </a>
                     </div>

@@ -185,10 +185,28 @@ document.addEventListener('alpine:init', () => {
 // ------------------------------------------------------------------
 
 if (document.getElementById('loadMapBtn')) {
-    
-    document.getElementById('loadMapBtn').addEventListener('click',function() {
+
+    document.getElementById('loadMapBtn').addEventListener('click', function () {
         document.getElementById('map_content').style.display = 'none';
         document.getElementById('map_iframe').style.display = 'block';
     })
-    
+
+}
+
+
+// ------------------------------------------------------------------
+// Video player
+// ------------------------------------------------------------------
+
+if (document.getElementById('ctm_video') && document.getElementById('videoController')) {
+    const video = document.getElementById('ctm_video');
+    const btn = document.getElementById('videoController');
+    const videoThumb = document.getElementById('videoThumb');
+
+    btn.addEventListener('click', () => {
+        videoThumb.style.display = "none";
+        btn.style.display = "none";
+        video.style.display = "block";
+        video.play();
+    });
 }

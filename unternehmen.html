@@ -367,8 +367,7 @@
                         </ul>
                     </div>
                 </div>
-                <a href="javascript:;"
-                    class="btn_red block mx-auto">
+                <a href="javascript:;" class="btn_red block mx-auto">
                     Jetzt Kontaktieren
                 </a>
             </div>
@@ -727,19 +726,26 @@
                                 reinschnuppern!
                             </p>
                         </div>
-                        <a href="javascript:;" class="video aspect-[1.96/1] relative">
+                        <div class="video aspect-[1.96/1] relative">
                             <img src="assets/images/video-thumb.webp" alt="Video thumbnail"
-                                class="size-full object-cover">
-                            <svg class="w-50 3xl:w-100 absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
-                                xmlns="http://www.w3.org/2000/svg" width="113" height="113" viewBox="0 0 113 113">
-                                <g id="Group_370" data-name="Group 370" transform="translate(-1289 -7156)">
-                                    <circle id="Ellipse_6" data-name="Ellipse 6" cx="56.5" cy="56.5" r="56.5"
-                                        transform="translate(1289 7156)" fill="#ff2d16" />
-                                    <path id="Polygon_6" data-name="Polygon 6" d="M35.716,0,71.433,46.093H0Z"
-                                        transform="translate(1374.146 7176.678) rotate(90)" fill="#fff" />
-                                </g>
-                            </svg>
-                        </a>
+                                class="size-full object-cover" id="videoThumb">
+                            <button aria-label="Video-Wiedergabetaste" id="videoController" class="w-50 3xl:w-100 absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg" width="113" height="113" viewBox="0 0 113 113">
+                                    <g id="Group_370" data-name="Group 370" transform="translate(-1289 -7156)">
+                                        <circle id="Ellipse_6" data-name="Ellipse 6" cx="56.5" cy="56.5" r="56.5"
+                                            transform="translate(1289 7156)" fill="#ff2d16" />
+                                        <path id="Polygon_6" data-name="Polygon 6" d="M35.716,0,71.433,46.093H0Z"
+                                            transform="translate(1374.146 7176.678) rotate(90)" fill="#fff" />
+                                    </g>
+                                </svg>
+                                <span class="sr-only">Video-Wiedergabetaste</span>
+                            </button>
+                            <video style="display: none;" id="ctm_video" controls preload="metadata" poster="assets/images/video-thumb.webp" width="720" height="370" class="size-full object-cover">
+                                <source src="assets/images/demo.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                     </div>
                 </div>
             </div>
