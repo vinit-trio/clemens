@@ -232,118 +232,112 @@
         </section>
 
         <!-- fire start-->
-        <section id="heizung" class="relative z-1 py-spc text-white">
-            <div class="container">
-                <div class="grid text-center sm:textleft sm:grid-cols-2 place-items-center">
-                    <div>
-                        <img src="assets/images/fire.svg" alt="" class="w-150 sm:w-210 mb-10 xl:mb-20">
-                        <h1 class="text-center text-h1 font-semibold uppercase">
-                            Heizung
-                        </h1>
-                    </div>
-                    <div>
-                        <h2 class="text-h2 uppercase font-semibold mb-20">
-                            Kontaktieren Sie uns:
-                        </h2>
-                        <a class="text-h4 font-semibold" href="tel:+492761834147">Tel: 0 27 61 / 83 41 47</a>
-                        <br>
-                        <a class="text-h4 font-semibold"
-                            href="mailto:info@clemens-sanitaer.de">info@clemens-sanitaer.de</a>
-                    </div>
-                </div>
-            </div>
-            <div class="absolute -z-2 inset-0">
-                <img src="assets/images/heat-pump.webp" alt="" class="size-full object-cover">
-            </div>
-            <div class="absolute -z-1 inset-0 gdnt_red opacity-80"></div>
-        </section>
-
-        <section class="py-spc gdnt_red text-white">
-            <div class="container 3xl:py-spc">
-                <div class="grid lg:grid-cols-2 gap-40 xl:gap-80">
-                    <div class="space-y-40 xl:space-y-80">
+        <section>
+            <div id="heizung" class="relative z-1 py-spc text-white">
+                <div class="container">
+                    <div class="grid text-center sm:text-left sm:grid-cols-2 place-items-center">
                         <div>
-                            <h3 class="text-h2 font-semibold mb-14 xl:mb-26 uppercase">
-                                Individuelle Beratung
-                                und Heizungsplanung
-                            </h3>
-                            <div x-data="{open:false}">
-                                <div class="text">
-                                    <p>
-                                        Eine moderne Heizungsanlage muss heute mehr leisten als nur zu heizen - sie soll
-                                        effizient, nachhaltig und auf Ihre Bedürfnisse abgestimmt sein. Deshalb beginnt
-                                        bei
-                                        uns jedes Projekt mit einer persönlichen, individuellen Beratung. Wir
-                                        analysieren
-                                        die Gegebenheiten Ihres Gebäudes, berücksichtigen Ihre Wünsche und entwickeln
-                                    </p>
-                                </div>
-                                <div class="text max-h-0 overflow-hidden transition-all duration-300" x-ref="ex_content"
-                                    x-bind:style="open ? 'max-height: ' + $refs.ex_content.scrollHeight + 'px' : ''">
-                                    <p>
-                                        daraus ein maßgeschneidertes Heizkonzept.
-                                        Ob Gas, Öl, Wärmepumpe, Pellet oder Solarthermie - wir prüfen alle Möglichkeiten
-                                        und
-                                        finden die Lösung, die in Technik, Wirtschaftlichkeit und Umweltverträglichkeit
-                                        am
-                                        besten zu Ihnen passt. Dabei behalten wir auch zukünftige Anforderungen im
-                                        Blick,
-                                        etwa bei Neubauten oder energetischen Sanierungen.
-                                    </p>
-                                    <p>
-                                        Sie erhalten von uns nicht nur ein Angebot, sondern eine fundierte
-                                        Heizungsplanung -
-                                        klar strukturiert, transparent kalkuliert und auf Wunsch mit Energie- und
-                                        Fördermittelberatung kombiniert.
-                                    </p>
-                                </div>
-                                <button @click="open = !open" class="border-b">
-                                    <span x-show="!open">Mehr erfahren &gt;&gt;</span>
-                                    <span x-show="open">&lt;&lt; Weniger anzeigen</span>
-                                </button>
-                            </div>
+                            <img src="assets/images/fire.svg" alt="" class="w-150 sm:w-210 mb-10 xl:mb-20">
+                            <h1 class="text-center text-h1 font-semibold uppercase">
+                                Heizung
+                            </h1>
+                        </div>
+                        <div>
+                            <h2 class="text-h2 uppercase font-semibold mb-20">
+                                Kontaktieren Sie uns:
+                            </h2>
+                            <a class="text-h4 font-semibold" href="tel:+492761834147">Tel: 0 27 61 / 83 41 47</a>
+                            <br>
+                            <a class="text-h4 font-semibold"
+                                href="mailto:info@clemens-sanitaer.de">info@clemens-sanitaer.de</a>
                         </div>
                     </div>
-                    <div class="space-y-40 xl:space-y-80">
-                        <div>
-                            <h3 class="text-h2 font-semibold mb-14 xl:mb-26 uppercase">
-                                Individuelle Beratung
-                                und Heizungsplanung
-                            </h3>
-                            <div x-data="{open:false}">
-                                <div class="text">
-                                    <p>
-                                        Eine moderne Heizungsanlage muss heute mehr leisten als nur zu heizen - sie soll
-                                        effizient, nachhaltig und auf Ihre Bedürfnisse abgestimmt sein. Deshalb beginnt
-                                        bei
-                                        uns jedes Projekt mit einer persönlichen, individuellen Beratung. Wir
-                                        analysieren
-                                        die Gegebenheiten Ihres Gebäudes, berücksichtigen Ihre Wünsche und entwickeln
-                                    </p>
+                </div>
+                <div class="absolute -z-2 inset-0">
+                    <img src="assets/images/heat-pump.webp" alt="" class="size-full object-cover">
+                </div>
+                <div class="absolute -z-1 inset-0 gdnt_red opacity-80"></div>
+            </div>
+
+            <div class="py-spc gdnt_red text-white">
+                <div class="container 3xl:py-spc">
+                    <div class="grid lg:grid-cols-2 gap-40 xl:gap-80">
+                        <div class="space-y-40 xl:space-y-80">
+                            <div>
+                                <h3 class="text-h2 font-semibold mb-14 xl:mb-26 uppercase">
+                                    Individuelle Beratung
+                                    und Heizungsplanung
+                                </h3>
+                                <div x-data="{open:false}">
+                                    <div class="text">
+                                        <p>
+                                            Eine moderne Heizungsanlage muss heute mehr leisten als nur zu heizen - sie
+                                            soll effizient, nachhaltig und auf Ihre Bedürfnisse abgestimmt sein. Deshalb
+                                            beginnt bei uns jedes Projekt mit einer persönlichen, individuellen
+                                            Beratung. Wir analysieren die Gegebenheiten Ihres Gebäudes, berücksichtigen
+                                            Ihre Wünsche und entwickeln
+                                        </p>
+                                    </div>
+                                    <div class="text max-h-0 overflow-hidden transition-all duration-300"
+                                        x-ref="ex_content"
+                                        x-bind:style="open ? 'max-height: ' + $refs.ex_content.scrollHeight + 'px' : ''">
+                                        <p>
+                                            daraus ein maßgeschneidertes Heizkonzept. Ob Gas, Öl, Wärmepumpe, Pellet
+                                            oder Solarthermie - wir prüfen alle Möglichkeiten und finden die Lösung, die
+                                            in Technik, Wirtschaftlichkeit und Umweltverträglichkeit am besten zu Ihnen
+                                            passt. Dabei behalten wir auch zukünftige Anforderungen im Blick, etwa bei
+                                            Neubauten oder energetischen Sanierungen.
+                                        </p>
+                                        <p>
+                                            Sie erhalten von uns nicht nur ein Angebot, sondern eine fundierte
+                                            Heizungsplanung - klar strukturiert, transparent kalkuliert und auf Wunsch
+                                            mit Energie- und Fördermittelberatung kombiniert.
+                                        </p>
+                                    </div>
+                                    <button @click="open = !open" class="border-b">
+                                        <span x-show="!open">Mehr erfahren &gt;&gt;</span>
+                                        <span x-show="open">&lt;&lt; Weniger anzeigen</span>
+                                    </button>
                                 </div>
-                                <div class="text max-h-0 overflow-hidden transition-all duration-300" x-ref="ex_content"
-                                    x-bind:style="open ? 'max-height: ' + $refs.ex_content.scrollHeight + 'px' : ''">
-                                    <p>
-                                        daraus ein maßgeschneidertes Heizkonzept.
-                                        Ob Gas, Öl, Wärmepumpe, Pellet oder Solarthermie - wir prüfen alle Möglichkeiten
-                                        und
-                                        finden die Lösung, die in Technik, Wirtschaftlichkeit und Umweltverträglichkeit
-                                        am
-                                        besten zu Ihnen passt. Dabei behalten wir auch zukünftige Anforderungen im
-                                        Blick,
-                                        etwa bei Neubauten oder energetischen Sanierungen.
-                                    </p>
-                                    <p>
-                                        Sie erhalten von uns nicht nur ein Angebot, sondern eine fundierte
-                                        Heizungsplanung -
-                                        klar strukturiert, transparent kalkuliert und auf Wunsch mit Energie- und
-                                        Fördermittelberatung kombiniert.
-                                    </p>
+                            </div>
+                        </div>
+                        <div class="space-y-40 xl:space-y-80">
+                            <div>
+                                <h3 class="text-h2 font-semibold mb-14 xl:mb-26 uppercase">
+                                    Individuelle Beratung
+                                    und Heizungsplanung
+                                </h3>
+                                <div x-data="{open:false}">
+                                    <div class="text">
+                                        <p>
+                                            Eine moderne Heizungsanlage muss heute mehr leisten als nur zu heizen - sie
+                                            soll effizient, nachhaltig und auf Ihre Bedürfnisse abgestimmt sein. Deshalb
+                                            beginnt bei uns jedes Projekt mit einer persönlichen, individuellen
+                                            Beratung. Wir analysieren die Gegebenheiten Ihres Gebäudes, berücksichtigen
+                                            Ihre Wünsche und entwickeln
+                                        </p>
+                                    </div>
+                                    <div class="text max-h-0 overflow-hidden transition-all duration-300"
+                                        x-ref="ex_content"
+                                        x-bind:style="open ? 'max-height: ' + $refs.ex_content.scrollHeight + 'px' : ''">
+                                        <p>
+                                            daraus ein maßgeschneidertes Heizkonzept. Ob Gas, Öl, Wärmepumpe, Pellet
+                                            oder Solarthermie - wir prüfen alle Möglichkeiten und finden die Lösung, die
+                                            in Technik, Wirtschaftlichkeit und Umweltverträglichkeit am besten zu Ihnen
+                                            passt. Dabei behalten wir auch zukünftige Anforderungen im Blick, etwa bei
+                                            Neubauten oder energetischen Sanierungen.
+                                        </p>
+                                        <p>
+                                            Sie erhalten von uns nicht nur ein Angebot, sondern eine fundierte
+                                            Heizungsplanung - klar strukturiert, transparent kalkuliert und auf Wunsch
+                                            mit Energie- und Fördermittelberatung kombiniert.
+                                        </p>
+                                    </div>
+                                    <button @click="open = !open" class="border-b">
+                                        <span x-show="!open">Mehr erfahren &gt;&gt;</span>
+                                        <span x-show="open">&lt;&lt; Weniger anzeigen</span>
+                                    </button>
                                 </div>
-                                <button @click="open = !open" class="border-b">
-                                    <span x-show="!open">Mehr erfahren &gt;&gt;</span>
-                                    <span x-show="open">&lt;&lt; Weniger anzeigen</span>
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -355,7 +349,7 @@
         <!-- water start-->
         <section id="sanitar" class="relative z-1 py-spc text-white">
             <div class="container">
-                <div class="grid text-center sm:textleft sm:grid-cols-2 place-items-center">
+                <div class="grid text-center sm:text-left sm:grid-cols-2 place-items-center">
                     <div>
                         <img src="assets/images/water.svg" alt="" class="w-150 sm:w-210 mb-10 xl:mb-20">
                         <h1 class="text-center text-h1 font-semibold uppercase">
@@ -476,7 +470,7 @@
         <!-- snow start-->
         <section id="klima" class="relative z-1 py-spc text-white">
             <div class="container">
-                <div class="grid text-center sm:textleft sm:grid-cols-2 place-items-center">
+                <div class="grid text-center sm:text-left sm:grid-cols-2 place-items-center">
                     <div>
                         <img src="assets/images/snow.svg" alt="" class="w-150 sm:w-210 mb-10 xl:mb-20">
                         <h1 class="text-center text-h1 font-semibold uppercase">
@@ -597,7 +591,7 @@
         <!-- thunder start-->
         <section id="elektro" class="relative z-1 py-spc text-white">
             <div class="container">
-                <div class="grid text-center sm:textleft sm:grid-cols-2 place-items-center">
+                <div class="grid text-center sm:text-left sm:grid-cols-2 place-items-center">
                     <div>
                         <img src="assets/images/thunder.svg" alt="" class="w-150 sm:w-210 mb-10 xl:mb-20">
                         <h1 class="text-center text-h1 font-semibold uppercase">
