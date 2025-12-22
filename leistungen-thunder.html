@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Komplettlösungen für Heizung, Sanitär, Klima und Elektro">
+
+    <title>Clemens | Leistungen-Heizung</title>
+
+    <!-- Favicons -->
+    <link rel="icon" href="assets/images/favicon-light.png" type="image/png">
+    <link rel="icon" href="assets/images/favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+    <link rel="apple-touch-icon" href="assets/images/favicon-light.png" sizes="180x180"
+        media="(prefers-color-scheme: light)">
+    <link rel="apple-touch-icon" href="assets/images/favicon-dark.png" sizes="180x180"
+        media="(prefers-color-scheme: dark)">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Alpine -->
+    <script src="assets/js/alpine.js" defer></script>
+
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div x-data="{ show: true }" x-init="setTimeout(() =&gt; show = false)" x-show="show"
+        x-transition.opacity.duration.1000ms="" class="fixed inset-0 bg-white z-999999"></div>
+    <!-- loader -->
+
+    <!-- Header -->
+    <header class="py-13 xl:py-26 h-100 md:h-125 xl:h-150 flex items-center sticky top-0 z-20 bg-white/90"
+        x-data="{ open: false }" @keydown.window.escape="open = false"
+        @click="if ($event.target.tagName === 'A') open = false">
+        <div class="container">
+            <div class="flex items-center justify-between">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="Mike Clemens" class="w-150 md:w-215">
+                </a>
+                <div class="flex items-center gap-30 lg:gap-65">
+                    <div class="hidden md:flex gdnt_red text-white gap-12 xl:gap-24 py-8 px-15">
+                        <img src="assets/images/fire.svg" alt="" class="w-45">
+                        <div class="flex flex-col">
+                            <span class="text-h5 font-bold uppercase">24 Std.-Heizungsnotdienst</span>
+                            <a class="text-base" href="tel:+492761834147">Tel: 0 27 61 / 83 41 47</a>
+                            <a class="text-base" href="tel:+491775625368">Mobil: 01 77 / 5 62 53 68</a>
+                        </div>
+                    </div>
+                    <button @click="open = !open" class="relative size-50 xl:size-80" aria-label="Hauptmenü-Umschalter">
+                        <img src="assets/images/menu.svg" alt="" class="absolute inset-0 transition-all duration-300"
+                            :class="open ? 'opacity-0 -rotate-180' : ''">
+                        <img src="assets/images/close.svg" alt="" class="absolute inset-0 transition-all duration-300"
+                            :class="open ? '' : 'opacity-0 rotate-180'">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Panel -->
+        <div x-show="open" x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300"
+            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+            class="fixed inset-0 bg-blue/90 text-white z-20 p-6 top-100 md:top-125 xl:top-150">
+            <div class="h-full overflow-y-auto">
+                <div class="container py-44 lg:py-88">
+                    <nav>
+                        <ul class="primary_menu">
+                            <li>
+                                <a href="index.html" class="active">
+                                    Startseite
+                                </a>
+                            </li>
+                            <li>
+                                <a href="unternehmen.html">
+                                    Unternehmen
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="unternehmen.html#unser-team">Unser Team </a>
+                                    </li>
+                                    <li>
+                                        <a href="unternehmen.html#werte&motivation">Werte & Motivation </a>
+                                    </li>
+                                    <li>
+                                        <a href="unternehmen.html#zertifikate&partner">Zertifikate & Partner</a>
+                                    </li>
+                                    <li>
+                                        <a href="unternehmen.html#karriere">Karriere</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    Leistungen
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="leistungen-heizung.html">Heizung</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen-heizung.html">Sanitär</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen-heizung.html">Klima</a>
+                                    </li>
+                                    <li>
+                                        <a href="leistungen-heizung.html">Elektro</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="services.html">
+                                    Service
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="services.html#heizung">Heizung</a>
+                                    </li>
+                                    <li>
+                                        <a href="services.html#sanitar">Sanitär</a>
+                                    </li>
+                                    <li>
+                                        <a href="services.html#klima">Klima</a>
+                                    </li>
+                                    <li>
+                                        <a href="services.html#elektro">Elektro</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="referenzen.html">
+                                    Referenzen
+                                </a>
+                            </li>
+                            <li>
+                                <a href="kontakt.html">
+                                    Kontakt
+                                </a>
+                            </li>
+                            <li>
+                                <a href="aktuelles.html">
+                                    Aktuelles
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header -->
+
+    <main>
+
+        <!-- section 1 -->
+        <section
+            class="bg-slate relative z-1 overflow-hidden sm:min-h-[calc(100dvh-150px)] flex flex-col justify-end sm:pt-300 sm:pb-150">
+            <div class="container 4xl:max-w-full 4xl:pl-0!">
+                <div
+                    class="bg-slate sm:bg-slate/90 text-white py-16 xsm:py-40 sm:p-30 w-fit max-w-[83%] 4xl:pl-[calc((100%-1610px)/2)]!">
+                    <h1 class="text-h1 font-semibold uppercase">
+                        Kompetenz vor Ort - <br>
+                        Ihr Fachbetrieb für Heizung, Sanitär, Klima & Elektro
+                    </h1>
+                </div>
+            </div>
+            <div class="w-full not-sm:aspect-video sm:absolute inset-0 -z-1 -order-1">
+                <img src="assets/images/heat-pump.webp" class="size-full object-cover" fetchpriority="high"
+                    alt="Unternehmen hero bg">
+            </div>
+            <div
+                class="gdnt_slate text-white flex flex-col justify-center items-center gap-10 xl:gap-20 p-20 xl:p-40 absolute bottom-0 right-0 aspect-square">
+                <img src="assets/images/fire.svg" alt="" class="w-130 mx-auto">
+                <h3 class="text-h2 uppercase font-semibold">
+                    Heizung
+                </h3>
+            </div>
+        </section>
+
+        <!-- section 2 -->
+        <section id="unser-team" class="py-spc">
+            <div class="container">
+                <div class="grid lg:grid-cols-2 gap-22 xl:gap-45">
+                    <div class="images">
+                        <img src="assets/images/family.webp" alt="Wärme, auf die Sie sich verlassen können">
+                    </div>
+                    <div class="content">
+                        <h2 class="text-h1 uppercase font-semibold mb-14 xl:mb-28">
+                            Wärme, auf die Sie sich verlassen können
+                        </h2>
+                        <div class="text">
+                            <p>
+                                Moderne Heizungstechnik sorgt nicht nur für wohlige Wärme, sondern auch für
+                                Energieeinsparung und Umweltschutz. Ob Gasheizung, Wärmepumpe, Fußbodenheizung oder
+                                Hybridlösung - wir planen, installieren und warten Ihre Heizungsanlage fachgerecht und
+                                individuell auf Ihre Bedürfnisse abgestimmt. Durch den Einsatz moderner Systeme
+                                verbessern wir die Effizienz Ihrer Heiztechnik und senken langfristig Ihre
+                                Energiekosten. Vertrauen Sie auf unsere Erfahrung und unser technisches Know-how - für
+                                zuverlässige Wärme das ganze Jahr über.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- section 3 -->
+        <section class="bg-[#B2B2B2]/30 pt-spc text-[#2C2E34]">
+            <div class="container lg:pl-[calc((100%-1620px)/2)] lg:max-w-full lg:pr-0 pb-30 lg:pb-0">
+                <div class="grid lg:grid-cols-2 gap-50 items-end">
+                    <div class="content flex flex-col justify-center lg:py-50 lg:px-16">
+                        <h2 class="text-h1 font-semibold uppercase mb-15 xl:mb-30">
+                            Wärme nach Maß - Individuelle Heizlösungen vom Profi
+                        </h2>
+                        <div class="text mb-40 xl:mb-80">
+                            <p>
+                                Ob Einfamilienhaus, Wohnanlage oder Gewerbeimmobilie - wir bieten Ihnen zuverlässige und
+                                effiziente Lösungen rund um Ihre Heizungsanlage. Von der individuellen Beratung über die
+                                fachgerechte Installation bis hin zu Wartung, Reparatur und Modernisierung: Wir kümmern
+                                uns darum, dass Ihre Heiztechnik zuverlässig und energiesparend läuft.
+                                Privatkunden profitieren von komfortabler Wärme im Alltag, während wir für Gewerbekunden
+                                auf leistungsstarke, wirtschaftliche und betriebssichere Systeme setzen. Auch im Notfall
+                                sind wir schnell zur Stelle - mit einem flexiblen und erfahrenen Kundendienst.
+                            </p>
+                            <p>
+                                Verlassen Sie sich auf Kompetenz, Erfahrung und persönlichen Service -
+                                für Wärme, die bleibt.
+                            </p>
+                        </div>
+                        <h2 class="text-h1 font-semibold uppercase mb-15 xl:mb-30">
+                            Serviceleistungen
+                        </h2>
+                        <ul class="cstm_list text-h4 space-y-6 red mb-20 xl:mb-40 underline"
+                            style="--list-image: url(../images/tick.svg)">
+                            <li>Individuelle Beratung und Heizungsplanung </li>
+                            <li>Installation und Heizungsbau</li>
+                            <li>Heizungsreparatur und -Wartung aller gängigen Systeme</li>
+                            <li>Heizungswartung & Störungsdienst</li>
+                            <li>Wartungsverträge</li>
+                            <li>24 Stunden Kundendienst</li>
+                            <li>Beratung & Unterstützung bei Fördermittel-Beantragung</li>
+                        </ul>
+                        <a href="#"
+                            class="btn_red">
+                            Mehr erfahren
+                        </a>
+                    </div>
+                    <div class="image relative lg:sticky bottom-0">
+                        <img src="assets/images/person1.webp"
+                            alt="Wärme nach Maß - Individuelle Heizlösungen vom Profi">
+                        <div
+                            class="max-w-[clamp(22.1875rem,17.9808rem+4.8077vw,23.75rem)] absolute not-2xl:bottom-0 2xl:top-0 right-0 p-20 not-2xl:bg-white/70">
+                            <span>Mike Clemens</span>
+                            <ul class="cstm_list red" style="--list-image: url(../images/tick.svg)">
+                                <li>
+                                    Heizungsbaumeister
+                                </li>
+                                <li>
+                                    Energieberater und Gutachter für Haustechnik (DEKRA Zertifikat)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 4 -->
+        <section>
+            <div class="image aspect-video xl:aspect-[2.53/1] relative">
+                <img src="assets/images/service1.webp" alt="First service" class="size-full object-cover">
+                <div class="absolute inset-0 bg-linear-to-b from-black/70 via-black/0"></div>
+            </div>
+        </section>
+
+        <!-- section 5 -->
+        <section class="py-spc">
+            <div class="container">
+                <h2 class="text-h1 uppercase font-semibold mb-36 xl:mb-72">
+                    Heizungssysteme kurz erklärt
+                </h2>
+                <div class="grid md:grid-cols-2 gap-46 xl:gap-92 mb-spc">
+                    <div>
+                        <div class="red_icons flex flex-wrap items-end gap-16 xl:gap-32 mb-26 xl:mb-52">
+                            <div class="size-100">
+                                <img src="assets/images/service1_icon1.svg" alt="" class="size-full object-bottom-left">
+                            </div>
+                            <h3 class="text-h2 uppercase font-semibold">
+                                Wärmepumpe
+                            </h3>
+                        </div>
+                        <div class="text">
+                            <p>
+                                Energiequelle: Umweltwärme (Luft, Erdreich, Grundwasser)
+                                Typen: Luft-Wasser-, Sole-Wasser- (Erdwärme), Wasser-Wasser-Wärmepumpen
+                            </p>
+                            <ul class="cstm_list text-h4 space-y-6 red" style="--list-image: url(../images/tick.svg)">
+                                <li>
+                                    Sehr effizient (besonders mit Fußbodenheizung)
+                                </li>
+                                <li>
+                                    Geringe laufende Kosten
+                                </li>
+                                <li>
+                                    Umweltfreundlich (bei Nutzung von Ökostrom)
+                                </li>
+                                <li>
+                                    Förderfähig (staatliche Zuschüsse)
+                                </li>
+                                <li>
+                                    Ideales Heizsystem für eine Fußbodenheizung
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="red_icons flex flex-wrap items-end gap-16 xl:gap-32 mb-26 xl:mb-52">
+                            <div class="size-100">
+                                <img src="assets/images/service1_icon2.svg" alt="" class="size-full object-bottom-left">
+                            </div>
+                            <h3 class="text-h2 uppercase font-semibold">
+                                Wärmepumpe
+                            </h3>
+                        </div>
+                        <div class="text">
+                            <p>
+                                Energiequelle: Umweltwärme (Luft, Erdreich, Grundwasser)
+                                Typen: Luft-Wasser-, Sole-Wasser- (Erdwärme), Wasser-Wasser-Wärmepumpen
+                            </p>
+                            <ul class="cstm_list text-h4 space-y-6 red" style="--list-image: url(../images/tick.svg)">
+                                <li>
+                                    Sehr effizient (besonders mit Fußbodenheizung)
+                                </li>
+                                <li>
+                                    Geringe laufende Kosten
+                                </li>
+                                <li>
+                                    Umweltfreundlich (bei Nutzung von Ökostrom)
+                                </li>
+                                <li>
+                                    Förderfähig (staatliche Zuschüsse)
+                                </li>
+                                <li>
+                                    Ideales Heizsystem für eine Fußbodenheizung
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="red_icons flex flex-wrap items-end gap-16 xl:gap-32 mb-26 xl:mb-52">
+                            <div class="size-100">
+                                <img src="assets/images/service1_icon3.svg" alt="" class="size-full object-bottom-left">
+                            </div>
+                            <h3 class="text-h2 uppercase font-semibold">
+                                Wärmepumpe
+                            </h3>
+                        </div>
+                        <div class="text">
+                            <p>
+                                Energiequelle: Umweltwärme (Luft, Erdreich, Grundwasser)
+                                Typen: Luft-Wasser-, Sole-Wasser- (Erdwärme), Wasser-Wasser-Wärmepumpen
+                            </p>
+                            <ul class="cstm_list text-h4 space-y-6 red" style="--list-image: url(../images/tick.svg)">
+                                <li>
+                                    Sehr effizient (besonders mit Fußbodenheizung)
+                                </li>
+                                <li>
+                                    Geringe laufende Kosten
+                                </li>
+                                <li>
+                                    Umweltfreundlich (bei Nutzung von Ökostrom)
+                                </li>
+                                <li>
+                                    Förderfähig (staatliche Zuschüsse)
+                                </li>
+                                <li>
+                                    Ideales Heizsystem für eine Fußbodenheizung
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="red_icons flex flex-wrap items-end gap-16 xl:gap-32 mb-26 xl:mb-52">
+                            <div class="size-100">
+                                <img src="assets/images/service1_icon4.svg" alt="" class="size-full object-bottom-left">
+                            </div>
+                            <h3 class="text-h2 uppercase font-semibold">
+                                Wärmepumpe
+                            </h3>
+                        </div>
+                        <div class="text">
+                            <p>
+                                Energiequelle: Umweltwärme (Luft, Erdreich, Grundwasser)
+                                Typen: Luft-Wasser-, Sole-Wasser- (Erdwärme), Wasser-Wasser-Wärmepumpen
+                            </p>
+                            <ul class="cstm_list text-h4 space-y-6 red" style="--list-image: url(../images/tick.svg)">
+                                <li>
+                                    Sehr effizient (besonders mit Fußbodenheizung)
+                                </li>
+                                <li>
+                                    Geringe laufende Kosten
+                                </li>
+                                <li>
+                                    Umweltfreundlich (bei Nutzung von Ökostrom)
+                                </li>
+                                <li>
+                                    Förderfähig (staatliche Zuschüsse)
+                                </li>
+                                <li>
+                                    Ideales Heizsystem für eine Fußbodenheizung
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h4 class="text-h3">
+                        Haben Sie Fragen?
+                    </h4>
+                    <div class="text mb-24 xl:mb-42 max-w-5xl mx-auto">
+                        <p>
+                            Wir beraten Sie zu Reparaturarbeiten an Ihrer derzeitigen Heizung oder einem neuen
+                            Heizsystem. Nutzen Sie gerne auch den unten stehenden Heizungsrechner von Viessmann um ein
+                            unverbindliches Angebot für einen Heizungstausch zu erhalten.
+                        </p>
+                    </div>
+                    <a href="#"
+                        class="btn_blue">
+                        Jetzt Kontaktieren
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 6 -->
+        <section class="py-spc bg-[#B2B2B2]/30 text-center">
+            <div class="container">
+                <h2 class="text-h1 uppercase font-semibold mb-8 xl:mb-16">
+                    Heizungsrechner von viessmann
+                </h2>
+                <div class="text mb-45 xl:mb-90">
+                    <p>
+                        In wenigen Minuten erhalten Sie mit unserem Heizungsrechner ein unverbindliches Angebot für
+                        einen Heizungstausch.
+                    </p>
+                </div>
+                <div class="heating_calculator">
+                    <img src="assets/images/iframe.png" alt="heating_calculator" class="mx-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- section last -->
+        <section class="py-spc">
+            <div class="container">
+                <h2 class="text-h1 font-semibold uppercase mb-30 xl:mb-74">
+                    Unsere Leistungen im Überblick
+                </h2>
+                <div class="services_card text-white" current-service="fire">
+                    <a href="javascript:;"
+                        class="fire service_card hover:scale-105 transition-all duration-300 gdnt_red aspect-square flex flex-col justify-center items-center gap-10 xl:gap-20 p-20 xl:p-40">
+                        <img src="assets/images/fire.svg" alt="">
+                        <h3 class="text-h2 uppercase font-semibold">
+                            Heizung
+                        </h3>
+                    </a>
+                    <a href="javascript:;"
+                        class="water service_card hover:scale-105 transition-all duration-300 gdnt_blue aspect-square flex flex-col justify-center items-center gap-10 xl:gap-20 p-20 xl:p-40">
+                        <img src="assets/images/water.svg" alt="">
+                        <h3 class="text-h2 uppercase font-semibold">
+                            Sanitär
+                        </h3>
+                    </a>
+                    <a href="javascript:;"
+                        class="snow service_card hover:scale-105 transition-all duration-300 gdnt_yellow aspect-square flex flex-col justify-center items-center gap-10 xl:gap-20 p-20 xl:p-40">
+                        <img src="assets/images/snow.svg" alt="">
+                        <h3 class="text-h2 uppercase font-semibold">
+                            Klima
+                        </h3>
+                    </a>
+                    <a href="javascript:;"
+                        class="thunder service_card hover:scale-105 transition-all duration-300 gdnt_slate aspect-square flex flex-col justify-center items-center gap-10 xl:gap-20 p-20 xl:p-40">
+                        <img src="assets/images/thunder.svg" alt="">
+                        <h3 class="text-h2 uppercase font-semibold">
+                            Elektro
+                        </h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="gdnt_blue py-40 text-white">
+        <div class="container">
+            <div
+                class="grid sm:grid-cols-2 lg:grid-cols-3 2xl:flex flex-wrap gap-30 sm:gap-50 justify-between items-end">
+                <div>
+                    <p class="font-semibold">
+                        Heizung - Sanitär - Klima <br>
+                        Mike Clemens <br>
+                        In der Trift 11A | 57489 Drolshagen
+                    </p>
+                </div>
+                <div>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="Tel+492761834147">Tel.: +49 (0) 27 61 / 83 41 47 </a>
+                            </li>
+                            <li>
+                                <a href="tel:+492761834139">Fax.: +49 (0) 27 61 / 83 41 39</a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@clemens-sanitaer.de">info@clemens-sanitaer.de</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <a href="javascript:;">
+                        <img src="assets/images/footer-logo1.png" alt="SHK-Innung Kreis Olpe logo">
+                    </a>
+                </div>
+                <div>
+                    <a href="javascript:;">
+                        <img src="assets/images/footer-logo2.png" alt="DAS HANDWERK logo">
+                    </a>
+                </div>
+                <div class="flex flex-col 2xl:items-end gap-8 2xl:text-end">
+                    <a href="https://www.instagram.com" class="block" target="_blank">
+                        <img src="assets/images/insta.svg" alt="Instagram-Konto">
+                    </a>
+                    <nav>
+                        <ul class="legal_menu">
+                            <li>
+                                <a href="impressum.html">
+                                    Impressum
+                                </a>
+                            </li>
+                            <li>
+                                <a href="datenschutz.html">
+                                    Datenschutz
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p>
+                        © `25 | MDK MEDIADESIGN ■
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Sticky numbers -->
+    <div class="md:hidden sticky bottom-0 z-20 flex justify-center gdnt_red text-white gap-12 xl:gap-24 py-8 px-10">
+        <img src="assets/images/fire.svg" alt="" class="w-45">
+        <div class="flex flex-wrap items-center gap-x-12">
+            <span class="text-h5 font-bold uppercase">24 Std.-Heizungsnotdienst</span>
+            <div class="flex gap-x-12 flex-wrap">
+                <a class="text-base" href="tel:+492761834147">Tel: 0 27 61 / 83 41 47</a>
+                <a class="text-base" href="tel:+491775625368">Mobil: 01 77 / 5 62 53 68</a>
+            </div>
+        </div>
+    </div>
+    <!-- Sticky numbers -->
+
+    <!-- Back to top -->
+    <button x-data="backToTop()" x-show="visible" x-transition.opacity.duration.200 @click="scrollToTop"
+        class="fixed bottom-75 md:bottom-15 right-15 gdnt_red p-10 text-white z-30 border" aria-label="Zurück nach oben"
+        title="Zurück nach oben">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M6 15l6 -6l6 6"></path>
+        </svg>
+    </button>
+    <!-- Back to top -->
+
+    <!-- swiper js -->
+    <script src="assets/js/swiper.js"></script>
+    <!-- custom js -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
