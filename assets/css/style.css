@@ -1986,9 +1986,6 @@
   .slate_icons {
     color: var(--color-slate);
   }
-  [current-service="fire"] .fire, [current-service="water"] .water, [current-service="snow"] .snow, [current-service="thunder"] .thunder {
-    display: none !important;
-  }
   .pagination .active {
     text-decoration-line: underline;
   }

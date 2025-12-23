@@ -228,13 +228,6 @@
     @apply text-slate
   }
 
-  [current-service="fire"] .fire,
-  [current-service="water"] .water,
-  [current-service="snow"] .snow,
-  [current-service="thunder"] .thunder {
-    @apply !hidden
-  }
-
   .pagination .active {
     @apply underline
   }
